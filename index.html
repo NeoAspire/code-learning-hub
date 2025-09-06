@@ -1,335 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Grid with Search + Filter + Reset</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f8f9fa;
-      color: #333;
-    }
-
-    /* Header */
-    header {
-      background: #282A35;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 22px;
-    }
-
-    header nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-    }
-
-    /* Search + Filter Bar */
-    .search-filter {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin: 20px;
-      border-radius: 8px;
-      flex-wrap: wrap;
-    }
-
-    .search-filter input[type="text"] {
-      padding: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .search-filter select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .search-filter button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .search-filter button:hover {
-      background: #45a049;
-    }
-
-    /* Reset Button Style */
-    .reset-btn {
-      background: #f44336;
-    }
-    .reset-btn:hover {
-      background: #d32f2f;
-    }
-
-    /* Course Grid */
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .course-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .course-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .course-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .course-content {
-      padding: 15px;
-    }
-
-    .course-content h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .course-content p {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    .course-content button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .course-content button:hover {
-      background: #45a049;
-    }
-
-    /* No Results Message */
-    .no-results {
-      text-align: center;
-      font-size: 18px;
-      color: #888;
-      padding: 20px;
-      display: none;
-    }
-
-    /* Footer */
-    footer {
-      background: #282A35;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    /* Hide courses dynamically */
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <h1>EduLearn</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Courses</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Welcome to EduLearn</h2>
-    <p>Learn HTML, CSS, JavaScript, and more with our free courses!</p>
-  </section>
-
-  <!-- Search + Filter -->
-  <section class="search-filter">
-    <input type="text" id="searchBox" placeholder="Search courses...">
-    <select id="categoryFilter">
-      <option value="">All Categories</option>
-      <option value="web">Web Development</option>
-      <option value="programming">Programming</option>
-      <option value="data">Data Science</option>
-      <option value="design">Design</option>
-    </select>
-    <button onclick="filterCourses()">Search</button>
-    <button class="reset-btn" onclick="resetFilters()">Reset</button>
-  </section>
-
-  <!-- Course Grid -->
-  <section class="course-grid" id="courseGrid">
-    <div class="course-card" data-category="web">
-      <img src="https://via.placeholder.com/400x150/4CAF50/ffffff?text=HTML" alt="HTML Course">
-      <div class="course-content">
-        <h3>HTML Basics</h3>
-        <p>Learn the structure of web pages with HTML5.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-category="web">
-      <img src="https://via.placeholder.com/400x150/2196F3/ffffff?text=CSS" alt="CSS Course">
-      <div class="course-content">
-        <h3>CSS Styling</h3>
-        <p>Make your websites beautiful with CSS3.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-category="programming">
-      <img src="https://via.placeholder.com/400x150/FF9800/ffffff?text=JavaScript" alt="JS Course">
-      <div class="course-content">
-        <h3>JavaScript</h3>
-        <p>Add interactivity and logic to your websites.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-category="programming">
-      <img src="https://via.placeholder.com/400x150/9C27B0/ffffff?text=Python" alt="Python Course">
-      <div class="course-content">
-        <h3>Python Programming</h3>
-        <p>Learn Python from basics to advanced concepts.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-category="data">
-      <img src="https://via.placeholder.com/400x150/3F51B5/ffffff?text=Data+Science" alt="Data Science">
-      <div class="course-content">
-        <h3>Data Science</h3>
-        <p>Analyze and visualize data with modern tools.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-category="design">
-      <img src="https://via.placeholder.com/400x150/E91E63/ffffff?text=UI+Design" alt="Design">
-      <div class="course-content">
-        <h3>UI Design</h3>
-        <p>Create beautiful and user-friendly designs.</p>
-        <button>Start Learning</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- No Results Message -->
-  <div class="no-results" id="noResults">
-    ❌ No courses found. Try a different search or category.
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 NeoAspire. All rights reserved.</p>
-  </footer>
-
-  <!-- JavaScript for Search + Filter + Reset -->
-  <script>
-    function filterCourses() {
-      const searchText = document.getElementById("searchBox").value.toLowerCase();
-      const category = document.getElementById("categoryFilter").value;
-      const courses = document.querySelectorAll(".course-card");
-      const noResults = document.getElementById("noResults");
-
-      let visibleCount = 0;
-
-      courses.forEach(course => {
-        const title = course.querySelector("h3").textContent.toLowerCase();
-        const desc = course.querySelector("p").textContent.toLowerCase();
-        const courseCategory = course.getAttribute("data-category");
-
-        const matchesSearch = title.includes(searchText) || desc.includes(searchText);
-        const matchesCategory = category === "" || courseCategory === category;
-
-        if (matchesSearch && matchesCategory) {
-          course.classList.remove("hidden");
-          visibleCount++;
-        } else {
-          course.classList.add("hidden");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-      });
 
-      noResults.style.display = (visibleCount === 0) ? "block" : "none";
-    }
+        body {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "main"
+                "footer";
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            background: #f8f9fa;
+            color: #333;
+            gap: 0rem;
+        }
 
-    function resetFilters() {
-      document.getElementById("searchBox").value = "";
-      document.getElementById("categoryFilter").value = "";
-      const courses = document.querySelectorAll(".course-card");
-      courses.forEach(course => course.classList.remove("hidden"));
-      document.getElementById("noResults").style.display = "none";
-    }
+        /* Header */
+        header {
+            grid-area: header;
+            background: #282A35;
+            color: white;
+            padding: 1rem 2rem;
+        }
 
-    // Live search on typing
-    document.getElementById("searchBox").addEventListener("input", filterCourses);
-    document.getElementById("categoryFilter").addEventListener("change", filterCourses);
+        header h1 {
+            font-size: 1.5rem;
+            text-align: center;
 
-    // Press Enter to search
-    document.getElementById("searchBox").addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        filterCourses();
-      }
-    });
-  </script>
+        }
 
+        header nav {
+            padding: 1rem 1rem;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        header nav a:hover {
+            color: wheat;
+        }
+
+        /* Main */
+        main {
+            grid-area: main;
+        }
+
+        /* Hero */
+        .hero {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        /* Search + Filter Bar */
+        .search-filter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter input[type="text"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .search-filter button:hover {
+            background: #45a049;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            font-size: 1rem;
+            color: #888;
+            padding: 1rem;
+            display: none;
+            grid-column: 1 / -1;
+        }
+
+        /* Course Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
+            align-content: center;
+            background-color: none;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+            max-width: 300px;
+            justify-items: center;
+            align-items: center;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 1rem;
+        }
+
+        .course-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-content p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .course-content button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .course-content button:hover {
+            background: #45a049;
+        }
+
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+            background: #282A35;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>NeoAspire</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h2>Welcome to NeoAspire</h2>
+            <p>Learn HTML, CSS, JavaScript, and more with our free courses!</p>
+        </section>
+
+        <!-- Search + Filter -->
+        <section class="search-filter">
+            <input type="text" id="searchBox" placeholder="Search courses...">
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="web">Web Development</option>
+                <option value="programming">Programming</option>
+                <option value="data">Data Science</option>
+                <option value="design">Design</option>
+            </select>
+            <button onclick="filterCourses()">Search</button>
+            <button onclick="resetFilters()">Reset</button>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                ❌ No courses found. Try a different search or category.
+            </div>
+        </section>
+
+        <!-- Course Grid -->
+        <section class="course-grid" id="courseGrid">
+            <div class="course-card" data-category="web">
+                <img src="images/html-logo.png" alt="HTML Course">
+                <div class="course-content">
+                    <h3>HTML Basics</h3>
+                    <p>Learn the structure of web pages with HTML5.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="web">
+                <img src="images/css-logo.png" alt="CSS Course">
+                <div class="course-content">
+                    <h3>CSS Styling</h3>
+                    <p>Make your websites beautiful with CSS3.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="programming">
+                <img src="images/javascript-logo.png" alt="JS Course">
+                <div class="course-content">
+                    <h3>JavaScript</h3>
+                    <p>Add interactivity and logic to your websites.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="programming">
+                <img src="images/python-logo.png" alt="Python Course">
+                <div class="course-content">
+                    <h3>Python Programming</h3>
+                    <p>Learn Python from basics to advanced concepts.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="data">
+                <img src="images/data-science-logo.png" alt="Data Science">
+                <div class="course-content">
+                    <h3>Data Science</h3>
+                    <p>Analyze and visualize data with modern tools.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="design">
+                <img src="images/ui-design-logo.png" alt="Design">
+                <div class="course-content">
+                    <h3>UI Design</h3>
+                    <p>Create beautiful and user-friendly designs.</p>
+                    <button>Start Learning</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 NeoAspire. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function filterCourses() {
+            const searchText = document.getElementById("searchBox").value.toLowerCase();
+            const category = document.getElementById("categoryFilter").value;
+            const courses = document.querySelectorAll(".course-card");
+            const noResults = document.getElementById("noResults");
+
+            let visibleCount = 0;
+
+            courses.forEach(course => {
+                const title = course.querySelector("h3").textContent.toLowerCase();
+                const desc = course.querySelector("p").textContent.toLowerCase();
+                const courseCategory = course.getAttribute("data-category");
+
+                const matchesSearch = title.includes(searchText) || desc.includes(searchText);
+                const matchesCategory = category === "" || courseCategory === category;
+
+                if (matchesSearch && matchesCategory) {
+                    course.classList.remove("hidden");
+                    visibleCount++;
+                } else {
+                    course.classList.add("hidden");
+                }
+            });
+
+            noResults.style.display = (visibleCount === 0) ? "block" : "none";
+        }
+
+        function resetFilters() {
+            document.getElementById("searchBox").value = "";
+            document.getElementById("categoryFilter").value = "";
+            const courses = document.querySelectorAll(".course-card");
+            courses.forEach(course => course.classList.remove("hidden"));
+            document.getElementById("noResults").style.display = "none";
+        }
+
+        // Live search on typing
+        document.getElementById("searchBox").addEventListener("input", filterCourses);
+        document.getElementById("categoryFilter").addEventListener("change", filterCourses);
+
+        // Press Enter to search
+        document.getElementById("searchBox").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                filterCourses();
+            }
+        });
+    </script>
 </body>
+
+
 </html>
