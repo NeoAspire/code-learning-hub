@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="site-header">
+        <h1>NeoAspire</h1>
+        <nav>
+            <span class="nav-hamburger">&#9776;</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">About</a>
+                <a href="contact-us.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Page Content-->
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>© 2025 NeoAspire. All rights reserved.</p>
+    </footer>
+
+  <!-- Script to load hamburger -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.nav-hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+
+</html>
