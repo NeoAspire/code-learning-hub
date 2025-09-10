@@ -13,13 +13,15 @@ async function loadLayout() {
         document.getElementById('header-container').innerHTML = header;
         document.getElementById('footer-container').innerHTML = footer;
 
-        setupHamburgerNav(); // Add this line to setup hamburger after header loads
+        setupHamburgerNav(); // Setup hamburger after header loads
+        setupDarkModeToggle(); // Setup dark mode toggle after header loads 
     } 
     catch (error) {
         console.error('Error loading layout:', error);
     }
 }
 
+// Hamburger Menu Setup
 function setupHamburgerNav() {
     const hamburger = document.querySelector('.nav-hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -36,4 +38,30 @@ function setupHamburgerNav() {
     }
 }
 
+
+// Dark Mode Toggle 
+function setupDarkModeToggle() {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    if (toggleButton) {
+        // Load saved mode from localStorage
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            document.body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️';
+        }   
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️';    
+                localStorage.setItem('darkMode', 'enabled');
+            }
+            else {
+                toggleButton.textContent = '🌙';
+                localStorage.setItem('darkMode', 'disabled');
+            }   
+        });
+    }
+}
+
 window.addEventListener('DOMContentLoaded', loadLayout);
+
