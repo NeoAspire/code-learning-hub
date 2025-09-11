@@ -33,11 +33,28 @@
             justify-content: space-between;
         }
 
-        header h1 {
-            font-size: 1.5rem;
-            text-align: left;
+        header .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.2rem;
+        }   
+
+        header .logo img {
+            display: block;
+            max-width: 150px;
+            max-height: 40px;
+            object-fit: contain;           
         }
-             
+
+        header .logo h1 {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+
         header nav {
             display: flex;
             align-items: center;
@@ -58,7 +75,7 @@
         header nav a:hover {
             color: whitesmoke;
         }
-       
+
 
         /* Hamburger hidden by default */
         .nav-hamburger {
@@ -127,37 +144,45 @@
             font-size: 1.1rem;
             cursor: pointer;
         }
-  
+
         .dark-mode {
             background: #121212;
             color: #e0e0e0;
         }
+
         .dark-mode header {
             background: #1f1f1f;
-        }   
+        }
+
         .dark-mode footer {
             background: #1f1f1f;
-        }  
+        }
+
         .dark-mode .hero {
             background: #333;
             color: #e0e0e0;
         }
+
         .dark-mode .search-filter {
             background: #1f1f1f;
             box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
         }
+
         .dark-mode .search-filter input[type="text"],
         .dark-mode .search-filter select {
             background: #333;
             color: #e0e0e0;
             border: 1px solid #555;
-        }   
+        }
+
         .dark-mode .search-filter button {
             background: #555;
         }
+
         .dark-mode .search-filter button:hover {
             background: #777;
         }
+
         .dark-mode .no-results {
             color: #bbb;
         }
@@ -166,64 +191,78 @@
             background: #1f1f1f;
             color: #e0e0e0;
             box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
-        }   
+        }
+
         .dark-mode .course-card:hover {
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
+
         .dark-mode .course-content button {
             background: #555;
         }
+
         .dark-mode .course-content button:hover {
             background: #777;
         }
-        .dark-mode .about-section, .dark-mode .course-section, .dark-mode .contactus-section {
+
+        .dark-mode .about-section,
+        .dark-mode .course-section,
+        .dark-mode .contactus-section {
             background: #1f1f1f;
             color: #e0e0e0;
             box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
-        }   
-        .dark-mode .about-section a, .dark-mode .contactus-section button {
+        }
+
+        .dark-mode .about-section a,
+        .dark-mode .contactus-section button {
             background: #555;
         }
-        .dark-mode .about-section a:hover, .dark-mode .contactus-section button:hover {
+
+        .dark-mode .about-section a:hover,
+        .dark-mode .contactus-section button:hover {
             background: #777;
         }
+
         .dark-mode .about-features .feature-card {
             background: #333;
             color: #e0e0e0;
             box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
         }
+
         .dark-mode .about-section ul li,
         .dark-mode .course-section ul li {
             color: #bbb;
         }
+
         .dark-mode .course-section h2,
-        .dark-mode .course-section h3,  
+        .dark-mode .course-section h3,
         .dark-mode .course-section p,
         .dark-mode .about-section h2,
         .dark-mode .about-section p,
         .dark-mode .about-features .feature-card h3,
         .dark-mode .about-features .feature-card p,
-        .dark-mode .contactus-section h2, 
-        .dark-mode .contactus-section label
-        {
+        .dark-mode .contactus-section h2,
+        .dark-mode .contactus-section label {
             color: #e0e0e0;
-        }   
-        
+        }
+
         .dark-mode .contactus-section input[type="text"],
-        .dark-mode .contactus-section input[type="email"],  
+        .dark-mode .contactus-section input[type="email"],
         .dark-mode .contactus-section textarea {
             background: #333;
             color: #e0e0e0;
             border: 1px solid #555;
         }
+
         .dark-mode .success-message {
             color: #4CAF50;
         }
+
         .dark-mode .error-message {
             color: #FF5252;
         }
 
-        
+
         /* Main */
         main {
             grid-area: main;
