@@ -1,0 +1,8 @@
+ /* Footer */
+ footer {
+     grid-area: footer;
+     background: #282A35;
+     color: white;
+     text-align: center;
+     padding: 1em;
+ }

@@ -1,0 +1,9 @@
+/* Main CSS File */
+/* Importing layout styles */
+@import url('layout/grid.css');
+@import url('layout/footer.css');
+@import url('layout/header.css');
+
+/* older styles to be modified */
+@import url('style.css');
+

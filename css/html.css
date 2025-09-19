@@ -1,0 +1,112 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 0em;
+}
+
+/* Sidebar Styles */
+aside {
+    background-color: #e9ecef;
+    color: #212529;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+}
+
+aside h2 {
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #212529;
+}
+
+aside a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #212529;
+    font-size: 15px;
+}
+
+aside a:hover {
+    background-color: #d6d8db;
+    /* hover effect */
+    color: #000;
+}
+
+aside a.active {
+    background-color: #04AA6D;
+    color: white;
+    font-weight: bold;
+}
+
+/* Article Styles */
+article {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+article .page-hero {
+    text-align: center;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #04AA6D;
+    color: #212529;
+
+}
+article .navigation {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+article button{
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+ 
+}
+article button:hover {
+    background-color: #039f5b;
+}
+article h1, article h2, article h3 {
+    color: #212529;
+    margin: 0.3em;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+article p, ul, li{
+    line-height: 1.5em;
+    color: #212529;
+    margin: 0.5em;
+    font-size: 1rem;
+    text-align: justify;
+}
+article .code {
+    margin-top: 0.5rem;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #333;
+    overflow-x: auto;
+}
+article pre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    line-height: 1.5em;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

@@ -2,7 +2,7 @@
 /* js/layout */
 async function loadLayout() {
     try {
-        const response = await fetch('layout.html');
+        const response = await fetch('base.html');
         const text = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
@@ -64,4 +64,3 @@ function setupDarkModeToggle() {
 }
 
 window.addEventListener('DOMContentLoaded', loadLayout);
-
