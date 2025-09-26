@@ -1,0 +1,16 @@
+ /* Hero */
+        .hero {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }

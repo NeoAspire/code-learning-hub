@@ -1,9 +1,22 @@
 /* Main CSS File */
 /* Importing layout styles */
 @import url('layout/grid.css');
-@import url('layout/footer.css');
 @import url('layout/header.css');
+@import url('layout/footer.css');
+@import url('layout/hero.css');
 
-/* older styles to be modified */
-@import url('style.css');
+/* Importing themes styles */
+@import url('themes/dark.css');
+
+/* Importing page-specific styles */
+@import url('pages/index.css');
+@import url('pages/about.css');
+@import url('pages/courses.css');
+@import url('pages/contact-us.css');
+@import url('pages/html-css.css');
+
+/* Importing responsive styles */
+@import url('responsive/pages-responsive.css');
+
+
 

@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
-     <!-- Main CSS -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon/favicon.png">
-    <!-- html stylesheet -->
-    <link rel="stylesheet" href="css/html.css">
     <!-- Link to external JS for layout (e.g., hamburger menu) -->
     <script src="js/base.js"></script>
 </head>
@@ -23,54 +21,79 @@
 
     <!-- Main Content -->
     <main>
-        <aside>
-            <h2 id="html-home">LEARN HTML</h2>
-            <a href="#intro">HTML Introduction</a>
-            <a href="#key-elements">HTML Elements</a>
-            <a href="html/attributes.html">HTML Attributes</a>
-            <a href="html/headings.html">HTML Headings</a>
-            <a href="html/paragraphs.html">HTML Paragraphs</a>
-            <a href="html/styles.html">HTML Styles</a>
-            <a href="html/fonts.html">HTML Fonts</a>
-            <a href="html/text-formatting.html">HTML Text Formatting</a>
-            <a href="html/links.html">HTML Links</a>
-            <a href="html/images.html">HTML Images</a>
-            <a href="html/tables.html">HTML Tables</a>
-            <a href="html/lists.html">HTML Lists</a>
-            <a href="html/forms.html">HTML Forms</a>
-            <a href="html/iframes.html">HTML Iframes</a>
-            <a href="html/html5.html">HTML5</a>
-            <a href="html/semantics.html">HTML Semantics</a>
-            <a href="html/entities.html">HTML Entities</a>
-            <a href="html/colors.html">HTML Colors</a>
-            <a href="html/examples.html">HTML Examples</a>
-            <a href="html/reference.html">HTML Reference</a>
-            <a href="html/quiz.html">HTML Quiz</a>
-            <a href="html/certification.html">HTML Certification</a>
-        </aside>
-        <article>
-            <!-- Hero Section -->
-            <section class="page-hero">
-                <h3>HTML (HyperText Markup Language)</h3>
-                <p>HTML is the standard markup language for creating Web pages. It describes the structure of a Web page
-                    and consists of a series of elements that tell the browser how to display the content.</p>
-            </section>
+        <section class="aside-article-container">
 
-            <!-- Navigation Buttons -->
-            <section class="navigation">
-                <button onclick="window.location.href='index.html'" class="home-btn">Home</button>
-                <button onclick="window.location.href='#key-elements'" class="next-btn">Next</button>
-            </section>
+            <aside>
+                <h2 id="html-home">LEARN HTML</h2>
+                <a href="#html-intro">HTML Introduction</a>
+                <a href="#html-elements">HTML Elements</a>
+                <a href="#html5-semantics">HTML5 Semantics</a>
+                <a href="#html-attributes">HTML Attributes</a>
+                <a href="#comingsoon">HTML Headings</a>
+                <a href="#comingsoon">HTML Paragraphs</a>
+                <a href="#comingsoon">HTML Styles</a>
+                <a href="#comingsoon">HTML Fonts</a>
+                <a href="#comingsoon">HTML Text Formatting</a>
+                <a href="#comingsoon">HTML Links</a>
+                <a href="#comingsoon">HTML Images</a>
+                <a href="#comingsoon">HTML Tables</a>
+                <a href="#comingsoon">HTML Lists</a>
+                <a href="#comingsoon">HTML Forms</a>
+                <a href="#comingsoon">HTML Iframes</a>
+                <a href="#comingsoon">HTML Media</a>
+                <a href="#comingsoon">HTML Entities</a>
+                <a href="#comingsoon">HTML Colors</a>
+            </aside>
+            <article>
+                <!-- Hero Section -->
+                <section class="page-hero">
+                    <h3>HTML (HyperText Markup Language)</h3>
+                    <p>The standard language for creating web pages and web applications.</p>
+                </section>
 
-            <!-- Main Content Section -->
-            <section class="code" id="intro">
-                <h2>What is HTML?</h2>
-                <p>HTML stands for HyperText Markup Language. It is the standard language used to create and design web
-                    pages. HTML is not a programming language; it is a markup language that defines the structure and
-                    layout of a web document by using a variety of tags and attributes.</p>
-                <h2>Basic Structure of an HTML Document</h2>
-                <p>An HTML document typically consists of the following basic structure:</p>
-                <pre>
+                <!-- Navigation Buttons -->
+                <section class="navigation">
+                    <button onclick="window.location.href='index.html'" class="home-btn">Home</button>
+                    <button onclick="window.location.href='#'" class="next-btn">Next</button>
+                </section>
+
+                <!-- HTML Introduction Section -->
+                <section class="content-section" id="html-intro">
+                    <h2>Introduction to HTML</h2>
+                    <p>HTML (HyperText Markup Language) is the standard language used to create web pages. It was
+                        created by Tim Berners-Lee in 1991 and has since evolved through various versions to become the
+                        backbone of the World Wide Web. HTML is used to structure content on the web, allowing
+                        developers
+                        to define elements such as headings, paragraphs, links, images, and more.</p>
+
+                    <h2>Timeline of HTML Development</h2>
+                    <p>
+                    <ul>
+                        <li><strong>1991</strong>: HTML 1.0 - The first version of HTML was introduced by Tim
+                            Berners-Lee.</li>
+                        <li><strong>1995</strong>: HTML 2.0 - This version included support for forms and tables.</li>
+                        <li><strong>1997</strong>: HTML 3.2 - Introduced support for scripting languages like JavaScript
+                            and applets.</li>
+                        <li><strong>1997</strong>: HTML 4.0 - Added support for CSS, improved accessibility, and
+                            introduced new elements.</li>
+                        <li><strong>1999</strong>: HTML 4.01 - A minor update to HTML 4.0, fixing errors and improving
+                            standards compliance.</li>
+                        <li><strong>2000</strong>: XHTML 1.0 - A reformulation of HTML 4.01 in XML, making it more
+                            strict and extensible.</li>
+                        <li><strong>2008</strong>: HTML5 - The latest version, which includes new elements for
+                            multimedia, graphics, and more semantic tags.</li>
+                        <li><strong>2014</strong>: HTML5.1 - An update to HTML5, adding new features and improvements.
+                        </li>
+                        <li><strong>2016</strong>: HTML5.2 - Further updates to HTML5, including new elements and
+                            attributes.</li>
+                        <li><strong>Ongoing</strong>: HTML continues to evolve with new features and improvements being
+                            added regularly.</li>
+                    </ul>
+                    </p>
+
+                    <h2>Basic Structure of an HTML Document</h2>
+                    <p>An HTML document typically consists of the following basic structure:</p>
+                    <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -82,41 +105,271 @@
 &lt;/body&gt;
 &lt;/html&gt;
                 </pre>
-            </section>
-          
-            <!-- Key Elements Section -->
-            <section class="code" id="key-elements">
-                <h2>Key HTML Elements</h2>
-                <ul>
-                    <li><strong>&lt;!DOCTYPE html&gt;</strong>: Declares the document type and version of HTML.</li>
-                    <li><strong>&lt;html&gt;</strong>: The root element that contains all other HTML elements.</li>
-                    <li><strong>&lt;head&gt;</strong>: Contains meta-information about the document, such as the title
-                        and links to stylesheets.</li>
-                    <li><strong>&lt;title&gt;</strong>: Sets the title of the web page, which appears in the browser
-                        tab.</li>
-                    <li><strong>&lt;body&gt;</strong>: Contains the content of the web page, including text, images,
-                        links, etc.</li>
-                    <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: Heading tags used to define headings of different
-                        levels.</li>
-                    <li><strong>&lt;p&gt;</strong>: Defines a paragraph of text.</li>
-                    <li><strong>&lt;a&gt;</strong>: Defines a hyperlink to another page or resource.</li>
-                    <li><strong>&lt;img&gt;</strong>: Embeds an image in the web page.</li>
-                    <li><strong>&lt;div&gt;</strong>: A container element used to group other elements for styling or
-                        layout purposes.</li>
-                </ul>
-                <h2>Conclusion</h2>
-                <p>HTML is the foundation of web development. Understanding its structure and key elements is essential
-                    for creating effective and well-designed web pages. As you continue learning HTML, you'll discover
-                    more advanced features and techniques to enhance your web development skills.</p>
-            </section>
+                </section>
 
-            <!-- Navigation Buttons -->
-            <section class="navigation">
-                <button onclick="window.location.href='#html-home'" class="home-btn">Home</button>
-              
-            </section>
+                <!-- HTML Elements Section -->
+                <section class="content-section" id="html-elements">
+                    <h2>Key HTML Elements</h2>
+                    <ul>
+                        <li><strong>&lt;!DOCTYPE html&gt;</strong>: Declares the document type and version of HTML.</li>
+                        <li><strong>&lt;html&gt;</strong>: The root element that contains all other HTML elements.</li>
+                        <li><strong>&lt;head&gt;</strong>: Contains meta-information about the document, such as the
+                            title
+                            and links to stylesheets.</li>
+                        <li><strong>&lt;title&gt;</strong>: Sets the title of the web page, which appears in the browser
+                            tab.</li>
+                        <li><strong>&lt;body&gt;</strong>: Contains the content of the web page, including text, images,
+                            links, etc.</li>
+                        <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: Heading tags used to define headings of different
+                            levels.</li>
+                        <li><strong>&lt;p&gt;</strong>: Defines a paragraph of text.</li>
+                        <li><strong>&lt;a&gt;</strong>: Defines a hyperlink to another page or resource.</li>
+                        <li><strong>&lt;img&gt;</strong>: Embeds an image in the web page.</li>
+                        <li><strong>&lt;div&gt;</strong>: A container element used to group other elements for styling
+                            or
+                            layout purposes.</li>
+                    </ul>
 
-        </article>
+                </section>
+
+                <!-- HTML5 Semantics Section -->
+                <section class="content-section" id="html5-semantics">
+                    <h2>HTML5 Semantic Elements</h2>
+                    <p>HTML5 introduced several new semantic elements that provide better structure and meaning to web
+                        content. These elements help improve accessibility and SEO by clearly defining the purpose of
+                        different sections of a web page.</p>
+                    <h2>Structural Semantics</h2>
+                    <ul>
+                        <li><strong>&lt;header&gt;</strong>: Represents the header section of a document or a section,
+                            typically containing introductory content or navigation links.</li>
+                        <li><strong>&lt;footer&gt;</strong>: Represents the footer section of a document or a section,
+                            typically containing information about the author, copyright, or related links.</li>
+                        <li><strong>&lt;nav&gt;</strong>: Defines a section of navigation links.</li>
+                        <li><strong>&lt;main&gt;</strong>: Represents the main content of the document, unique to the
+                            document and not repeated across pages.</li>
+                        <li><strong>&lt;section&gt;</strong>: Defines a thematic grouping of content, typically with a
+                            heading.</li>
+                        <li><strong>&lt;article&gt;</strong>: Represents a self-contained piece of content that could be
+                            distributed independently, such as a blog post or news article.</li>
+                        <li><strong>&lt;aside&gt;</strong>: Contains content that is tangentially related to the main
+                            content, such as sidebars or pull quotes.</li>
+                    </ul>
+
+                    <h2>Textual/Metadata Semantics</h2>
+                    <ul>
+                        <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: Heading tags used to define headings of different
+                            levels.
+                        <li><strong>&lt;p&gt;</strong>: Defines a paragraph of text.</li>
+                        <li><strong>&lt;mark&gt;</strong>: Highlights or marks text for reference or emphasis.</li>
+                        <li><strong>&lt;time&gt;</strong>: Represents a specific point in time or a time duration,
+                            useful for marking up dates and times.</li>
+                        <li><strong>&lt;address&gt;</strong>: Provides contact information for the author or owner of a
+                            document or article.</li>
+                        <li><strong>&lt;abbr&gt;</strong>: Represents an abbreviation or acronym, providing a full
+                            description via the title attribute.</li>
+                        <li><strong>&lt;cite&gt;</strong>: Represents the title of a work, such as a book, article, or
+                            song.</li>
+                        <li><strong>&lt;figure&gt;</strong>: Used to encapsulate media content like images, diagrams,
+                            or code snippets, along with an optional caption defined by the &lt;figcaption&gt; element.
+                        </li>
+                        <li><strong>&lt;figcaption&gt;</strong>: Provides a caption or legend for the content within
+                            the &lt;figure&gt; element.</li>
+                    </ul>
+                    <h2>Form/Data Semantics</h2>
+                    <uL>
+                        <li><strong>&lt;label&gt;</strong>: Defines a label for an input element, improving
+                            accessibility and usability.</li>
+                        <li><strong>&lt;input&gt;</strong>: Represents a variety of input controls
+                            (text, checkbox, radio, etc.) for user data entry.</li>
+                        <li><strong>&lt;textarea&gt;</strong>: Defines a multi-line text input
+                            control for user data entry.</li>
+                        <li><strong>&lt;select&gt;</strong>: Represents a drop-down list of
+                            options for user selection.</li>
+                        <li><strong>&lt;option&gt;</strong>: Defines an option within a &
+                            lt;select&gt; element.</li>
+                        <li><strong>&lt;datalist&gt;</strong>: Provides a list of predefined options for an
+                            &lt;input&gt; element, allowing users to choose from a set of suggestions.</li>
+                        <li><strong>&lt;output&gt;</strong>: Represents the result of a calculation or user action,
+                            often used in forms.</li>
+                        <li><strong>&lt;button&gt;</button></strong>: Represents a clickable button. </li>
+                    </uL>
+                    <h2>Media Semantics</h2>
+                    <ul>
+                        <li><strong>&lt;audio&gt;</strong>: Embeds an audio player in the web page, allowing for the
+                            inclusion
+                            of audio content.</li>
+                        <li><strong>&lt;video&gt;</strong>: Embeds a video player in the web page, allowing for the
+                            inclusion
+                            of video content.</li>
+                        <li><strong>&lt;source&gt;</strong>: Used within the &lt;audio&gt; and &lt;video&gt; elements to
+                            define multiple media sources for different formats or resolutions.</li>
+                        <li><strong>&lt;track&gt;</strong>: Provides text tracks (such as
+                            subtitles or captions) for &lt;video&gt; and &lt;audio&gt; elements.</li>
+                        <li><strong>&lt;picture&gt;</strong>: A container element that allows for multiple sources of an
+                            image,
+                            enabling responsive images that adapt to different screen sizes and resolutions.</li>
+                    </ul>
+                    <h2>Table/Data Semantics</h2>
+                    <ul>
+                        <li><strong>&lt;table&gt;</strong>: Represents tabular data, consisting of rows and columns.
+                        </li>
+                        <li><strong>&lt;caption&gt;</strong>Represents table title or description.</li>
+                        <li><strong>&lt;thead&gt;</strong>: Defines the header section of a table, containing column
+                            headings.</li>
+                        <li><strong>&lt;tbody&gt;</strong>: Represents the main body of a table, containing data rows.
+                        </li>
+                        <li><strong>&lt;tfoot&gt;</strong>: Defines the footer section of a table, typically containing
+                            summary information.</li>
+                        <li><strong>&lt;tr&gt;</strong>: Represents a table row, containing one or more table cells.
+                        </li>
+                        <li><strong>&lt;th&gt;</strong>: Defines a header cell in a table, typically displayed in bold
+                            and centered.</li>
+                        <li><strong>&lt;td&gt;</strong>: Represents a standard data cell in a table.</li>
+                    </ul>
+                    <h2>Key Benefits of Semantic HTML5</h2>
+                    <ol>
+                        <li><strong>Accessibility</strong>: Screen readers and assistive technologies can better
+                            understand content.</li>
+                        <li><strong>SEO</strong>: Search engines can better index and rank your content.</li>
+                        <li><strong>Maintainability</strong>: Code is easier to read and manage.</li>
+                        <li><strong>Consistency</strong>: Provides a standard way to structure content across websites.
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- HTML Attributes -->
+                <section class="content-section" id="html-attributes">
+                    <h2>HTML Attributes</h2>
+                    <p> HTML attributes provide extra information about an element.
+                    <uL>
+                        <li>They are always written in the start tag.</li>
+                        <li>They usually come in name="value" pairs.</li>
+                        <li>Attributes control the behavior, appearance, or metadata of elements.</li>
+                    </uL>
+                    </p>
+
+                    <h2>Common HTML Attributes</h2>
+
+                    <table>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Used In</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>href</td>
+                            <td>&lt;a&gt;, &lt;link&gt;</td>
+                            <td>Specifies the URL of a link or resource.</td>
+                            <td><code>&lt;a href="about.html"&gt;About&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>src</td>
+                            <td>&lt;img&gt;, &lt;script&gt;, &lt;iframe&gt;, &lt;audio&gt;, &lt;video&gt;</td>
+                            <td>Specifies the source file (image, script, media, etc.).</td>
+                            <td><code>&lt;img src="photo.jpg" alt="Profile Photo"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>alt</td>
+                            <td>&lt;img&gt;</td>
+                            <td>Alternative text (for screen readers &amp; when image fails).</td>
+                            <td><code>&lt;img src="logo.png" alt="Company Logo"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>Any</td>
+                            <td>Unique identifier for an element (used in CSS/JS).</td>
+                            <td><code>&lt;p id="intro"&gt;Hello&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>class</td>
+                            <td>Any</td>
+                            <td>Groups elements for styling or scripting.</td>
+                            <td><code>&lt;p class="highlight"&gt;Text&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>style</td>
+                            <td>Any</td>
+                            <td>Inline CSS styling.</td>
+                            <td><code>&lt;p style="color:red;"&gt;Red Text&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>title</td>
+                            <td>Any</td>
+                            <td>Tooltip text on hover.</td>
+                            <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>target</td>
+                            <td>&lt;a&gt;</td>
+                            <td>Specifies where to open a link (<code>_blank</code>, <code>_self</code>).</td>
+                            <td><code>&lt;a href="site.html" target="_blank"&gt;Open&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>type</td>
+                            <td>&lt;button&gt;, &lt;input&gt;, &lt;script&gt;</td>
+                            <td>Defines type of element.</td>
+                            <td><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>value</td>
+                            <td>&lt;input&gt;, &lt;button&gt;, &lt;option&gt;</td>
+                            <td>Defines initial value.</td>
+                            <td><code>&lt;input type="text" value="John"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                            <td>Hint text for input fields.</td>
+                            <td><code>&lt;input type="email" placeholder="Enter email"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>disabled</td>
+                            <td>&lt;input&gt;, &lt;button&gt;, &lt;select&gt;</td>
+                            <td>Disables the element.</td>
+                            <td><code>&lt;button disabled&gt;Can't Click&lt;/button&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>readonly</td>
+                            <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                            <td>Makes input uneditable.</td>
+                            <td><code>&lt;input type="text" value="Only view" readonly&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td>
+                            <td>Identifies form elements when submitted.</td>
+                            <td><code>&lt;input type="text" name="username"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>rows / cols</td>
+                            <td>&lt;textarea&gt;</td>
+                            <td>Set textarea size.</td>
+                            <td><code>&lt;textarea rows="4" cols="30"&gt;&lt;/textarea&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>width / height</td>
+                            <td>&lt;img&gt;, &lt;video&gt;, &lt;canvas&gt;</td>
+                            <td>Set element size.</td>
+                            <td><code>&lt;img src="pic.jpg" width="200" height="150"&gt;</code></td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- Coming Soon -->
+                <section class="content-section" id="comingsoon">
+                    <h2>Coming Soon!</h2>
+                </section>
+
+
+                <!-- Navigation Buttons -->
+                <section class="navigation">
+                    <button onclick="window.location.href='#html-home'" class="home-btn">Home</button>
+
+                </section>
+
+            </article>
+        </section>
 
     </main>
 

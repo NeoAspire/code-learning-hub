@@ -1,0 +1,114 @@
+/* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+        /* Index Page Specific Styles*/
+        /* Search + Filter Bar */
+        .search-filter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter input[type="text"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+
+        .search-filter button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .search-filter button:hover {
+            background: #45a049;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            font-size: 1rem;
+            color: #888;
+            padding: 1rem;
+            display: none;
+            grid-column: 1 / -1;
+        }
+
+        /* Course Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
+            align-content: center;
+            background-color: none;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+            max-width: 300px;
+            justify-items: center;
+            align-items: center;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 1rem;
+        }
+
+        .course-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-content p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .course-content button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .course-content button:hover {
+            background: #45a049;
+        }
