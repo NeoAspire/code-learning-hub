@@ -123,18 +123,19 @@ article pre {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 table,
 th,
 td {
     border: 1px solid #444;
-}
+    font-size: 1rem;
+  }
 
 th,
 td {
-    padding: 10px;
+    padding: 5px;
     text-align: left;
 }
 

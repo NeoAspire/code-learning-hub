@@ -29,15 +29,15 @@
                 <a href="#html-elements">HTML Elements</a>
                 <a href="#html5-semantics">HTML5 Semantics</a>
                 <a href="#html-attributes">HTML Attributes</a>
-                <a href="#comingsoon">HTML Headings</a>
-                <a href="#comingsoon">HTML Paragraphs</a>
-                <a href="#comingsoon">HTML Styles</a>
-                <a href="#comingsoon">HTML Fonts</a>
-                <a href="#comingsoon">HTML Text Formatting</a>
+                <a href="#html-headings">HTML Headings</a>
+                <a href="#html-paragraphs">HTML Paragraphs</a>
+                <a href="#html-fonts">HTML Fonts</a>
+                <a href="#html-text-formatting">HTML Text Formatting</a>
+                <a href="#html-lists">HTML Lists</a>
+                <a href="#comingsoon">HTML Empty Tags</a>
                 <a href="#comingsoon">HTML Links</a>
                 <a href="#comingsoon">HTML Images</a>
                 <a href="#comingsoon">HTML Tables</a>
-                <a href="#comingsoon">HTML Lists</a>
                 <a href="#comingsoon">HTML Forms</a>
                 <a href="#comingsoon">HTML Iframes</a>
                 <a href="#comingsoon">HTML Media</a>
@@ -356,11 +356,380 @@
                     </table>
                 </section>
 
+                <!-- HTML Headings Tag -->
+                <section class="content-section" id="html-headings">
+                    <h2>Headings</h2>
+                    <p>Headings are used to define titles and subtitles of content. They help structure a web page and
+                        are important for SEO and accessibility.
+                        There are six levels of headings, from &lt;h1&gt; (most important) to &lt;h6>&gt; (least
+                        important).</p>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                            <td>&lt;h1&gt; This is Heading 1 &lt;/h1&gt;</td>
+                            <td>
+                                <h1>This is Heading 1</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;h2&gt; This is Heading 2 &lt;/h2&gt;</td>
+                            <td>
+                                <h2>This is Heading 2</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;h3&gt; This is Heading 3 &lt;/h3&gt;</td>
+                            <td>
+                                <h3>This is Heading 3</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;h4&gt; This is Heading 4 &lt;/h4&gt;</td>
+                            <td>
+                                <h4>This is Heading 4</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;h5&gt; This is Heading 5 &lt;/h5&gt;</td>
+                            <td>
+                                <h5>This is Heading 5</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;h6&gt; This is Heading 6 &lt;/h6&gt;</td>
+                            <td>
+                                <h6>This is Heading 6</h6>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- HTML Paragraph Tag -->
+                <section class="content-section" id="html-paragraphs">
+                    <h2>Paragraphs</h2>
+                    <p>In HTML, the &lt;p&gt; tag is used to define a paragraph of text.</p>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                            <td>
+                                &lt;p&gt; This is a paragraph of text. &lt;/p&gt;
+                            </td>
+                            <td>
+                                <p>This is a paragraph of text.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- HTML Fonts -->
+                <section class="content-section" id="html-fonts">
+                    <h2>Fonts</h2>
+                    <p>In older HTML (before HTML5), there was a &lt;font&gt; tag used to change text color, size, and
+                        typeface.</p>
+                    <table>
+                        <th>Syntax (Older Way before HTML5) </th>
+                        <th>Output</th>
+                        <tr>
+                            <td>
+                                &lt;p&gt; &lt;font color="red" size="5" face="Arial"&gt; This is styled text
+                                &lt;/font&gt; &lt;/p&gt;
+                            </td>
+                            <td>
+                                <p>
+                                    <font color="red" size="5" face="Arial">This is styled text</font>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>Modern Way (using CSS instead of &lt;font&gt;</p>
+                    <table>
+                        <th>Syntax (Modern Way in HTML5)</th>
+                        <th>Output</th>
+                        <tr>
+                            <td>
+                                &lt;p style="color: red; font-size: 24px; font-family: Arial;"&gt; This is styled text
+                                &lt;/p&gt;
+                            </td>
+                            <td>
+                                <p style="color: red; font-size: 24px; font-family: Arial;">This is styled text</p>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- HTML Text Formatting -->
+                <section class="content-section" id="html-text-formatting">
+                    <h2>Text Formatting</h2>
+                    <p>In HTML, text formatting tags are used to make text bold, italic, underlined, highlighted, etc.
+                        These tags change the appearance of the text but don’t affect the meaning (except semantic tags
+                        like &lt;strong&gt; and &lt;em&gt;).</p>
+                    <table>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Example</th>
+                            <th>Meaning</th>
+                        </tr>
+                        <tr>
+                            <td>&lt;b&gt;</td>
+                            <td><b>Bold text</b></td>
+                            <td>Bold (visual only)</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;strong&gt;</td>
+                            <td><strong>Important text</strong></td>
+                            <td>Bold + semantic importance</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;i&gt;</td>
+                            <td><i>Italic text</i></td>
+                            <td>Italic (visual only)</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;em&gt;</td>
+                            <td><em>Emphasized text</em></td>
+                            <td>Italic + emphasis (semantic)</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;u&gt;</td>
+                            <td><u>Underlined</u></td>
+                            <td>Underline</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;mark&gt;</td>
+                            <td><mark>Highlighted</mark></td>
+                            <td>Highlight text</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;small&gt;</td>
+                            <td><small>Small text</small></td>
+                            <td>Smaller text</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;del&gt;</td>
+                            <td><del>Deleted text</del></td>
+                            <td>Shows deleted content</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;ins&gt;</td>
+                            <td><ins>Inserted text</ins></td>
+                            <td>Shows added/inserted text</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;sub&gt;</td>
+                            <td>H<sub>2</sub>O</td>
+                            <td>Subscript</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;sup&gt;</td>
+                            <td>2<sup>5</sup></td>
+                            <td>Superscript</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;code&gt;</td>
+                            <td><code>print("Hello")</code></td>
+                            <td>Code snippet</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;pre&gt;</td>
+                            <td>
+                                <pre>This text keeps spaces and line breaks</pre>
+                            </td>
+                            <td>Used for formatted text or code blocks</td>
+                        </tr>
+                    </table>
+                    <h2>Example:</h2>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                            <td>&lt;p&gt; &lt;b&gt; Bold &lt;/b&gt; vs &lt;strong&gt;Strong &lt;/strong&gt; &lt;/p&gt;
+                            </td>
+                            <td>
+                                <p><b>Bold</b> vs <strong>Strong</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;i&gt;Italic&lt;/i&gt; vs &lt;em&gt;Emphasized&lt;/em&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><i>Italic</i> vs <em>Emphasized</em></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;u&gt;Underlined text&lt;/u&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><u>Underlined text</u></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;mark&gt;Highlighted text&lt;/mark&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><mark>Highlighted text</mark></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;small&gt;Small text&lt;/small&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><small>Small text</small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;del&gt;Deleted text&lt;/del&gt; and &lt;ins&gt;Inserted
+                                text&lt;/ins&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><del>Deleted text</del> and <ins>Inserted text</ins></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;Water formula: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;</td>
+                            <td>
+                                <p>Water formula: H<sub>2</sub>O</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;Math power: 2&lt;sup&gt;5&lt;/sup&gt; = 32&lt;/p&gt;</td>
+                            <td>
+                                <p>Math power: 2<sup>5</sup> = 32</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;p&gt;&lt;code&gt;console.log("Hello World");&lt;/code&gt;&lt;/p&gt;</td>
+                            <td>
+                                <p><code>console.log("Hello World");</code></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;pre&gt;This text keeps spaces and line breaks &lt;/pre&gt;</td>
+                            <td>
+                                <pre>This text keeps spaces and line breaks</pre>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- HTML Lists -->
+                <section class="content-section" id="html-lists">
+                    <h2>HTML Lists</h2>
+                    <p>In HTML, lists are used to display items in an organized way. There are three main types:</p>
+                    <h2>Ordered List</h2>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                        <td>
+                            &lt;ol&gt;<br>
+                            &lt;li&gt; HTML &lt;/li&gt;<br>
+                            &lt;li&gt; CSS &lt;/li&gt;<br>
+                            &lt;li&gt; JavaScript &lt;/li&gt;<br>
+                            &lt;/ol&gt;
+                        </td>
+                        <td>
+                            <ol>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            </ol>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">You can change numbering style with the <b>type</b> attribute:<br>
+                                👉type="1" → 1, 2, 3 (default)<br>
+                                👉type="A" → A, B, C<br>
+                                👉type="a" → a, b, c<br>
+                                👉type="I" → I, II, III<br>
+                                👉type="i" → i, ii, iii<br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            &lt;ol type="A" &gt;<br>
+                            &lt;li&gt; Apple &lt;/li&gt;<br>
+                            &lt;li&gt; Banana &lt;/li&gt;<br>
+                            &lt;li&gt; Cherry &lt;/li&gt;<br>
+                            &lt;/ol&gt;
+                            </td>
+                             <td><ol type="A">
+                            <li>Apple</li>
+                            <li>Banana</li>
+                            <li>Cherry</li>
+                            </ol>
+                            </td>
+                        </tr>
+                    </table>
+                    <h2>Unordered List</h2>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                        <td>
+                            &lt;ul&gt;<br>
+                            &lt;li&gt; Milk &lt;/li&gt;<br>
+                            &lt;li&gt; Bread &lt;/li&gt;<br>
+                            &lt;li&gt; Butter &lt;/li&gt;<br>
+                            &lt;/ul&gt;
+                        </td>
+                         <td>
+                            <ul>
+                            <li>Milk</li>
+                            <li>Bread</li>
+                            <li>Butter</li>
+                            </ul>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Types<br>
+                                👉disc (default circle)<br>
+                                👉circle (hollow circle)<br>
+                                👉square
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &lt;ul style="list-style-type: square;"&gt;<br>
+                                &lt;li&gt; Item 1 &lt;/li&gt;<br>
+                                &lt;li&gt; Item 2 &lt;/li&gt;<br>
+                                &lt;/ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type: square;">
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <h2>Description List</h2>
+                    <p>&lt;dt&gt; → Defines the term<br>
+                        &lt;dd&gt; → Defines the description</p>
+                    <table>
+                        <th>Syntax</th>
+                        <th>Output</th>
+                        <tr>
+                            <td>
+                                &lt;dl&gt;<br>
+                                &lt;dt&gt; HTML &lt;/dt&gt;<br>
+                                &lt;dd&gt; HyperText Markup Language &lt;/dd&gt;<br>
+                                &lt;dt&gt; CSS &lt;/dt&gt;<br>
+                                &lt;dd&gt; Cascading Style Sheets &lt;/dd&gt;<br>
+                                &lt;/dl&gt;
+                            </td>
+                               <td>
+                                <dl>
+                                <dt>HTML</dt>
+                                <dd>HyperText Markup Language</dd>
+                                <dt>CSS</dt>
+                                <dd>Cascading Style Sheets</dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
                 <!-- Coming Soon -->
                 <section class="content-section" id="comingsoon">
                     <h2>Coming Soon!</h2>
                 </section>
-
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
