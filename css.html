@@ -7,10 +7,9 @@
     <title>HTML</title>
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
     <!-- Link to external JS for layout (e.g., hamburger menu) -->
     <script src="js/base.js"></script>
+    <script src="js/html-css.js"></script>
 </head>
 
 <body>
@@ -27,26 +26,15 @@
                 <h2 id="css-home">LEARN CSS</h2>
                 <a href="#css-intro">CSS Introduction</a>
                 <a href="#css-grid">CSS Grid</a>
+                <a href="#universal-selector">Universal Selector</a>
                 <a href="#comingsoon">Coming Soon!</a>
 
 
             </aside>
             <article>
-                <!-- Hero Section -->
-                <section class="page-hero">
-                    <h3>CSS stands for Cascading Style Sheets.</h3>
-                    <p>
-                        <li>It’s used to style HTML elements.</li>
-                        <li>Controls colors, fonts, spacing, layout, animations, and overall visual presentation of a
-                            webpage.</li>
-                        <li>Works alongside HTML (structure) and JavaScript (behavior).</li>
-                    </p>
-                </section>
-
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button onclick="window.location.href='index.html'" class="home-btn">Home</button>
-                    <button onclick="window.location.href='#'" class="next-btn">Next</button>
+                    <button onclick="window.location.href='index.html'" class="home-btn">All Courses</button>
                 </section>
 
                 <!-- CSS Introduction -->
@@ -201,6 +189,50 @@
                     </code></pre>
                 </section>
 
+                 <!-- Universal Selector -->
+                <section class="content-section" id="universal-selector">
+                    <h2>Universal Selector</h2>
+                    <p>In CSS, the * { } syntax is called the universal selector. </p>
+                    <p>It selects all elements on the page, allowing you to apply styles globally.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+                        /* Apply a box-sizing rule to all elements */
+                        * {
+                            box-sizing: border-box;
+                        }
+
+                        /* Set a default font and background for the entire page */
+                        * {
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                        }
+                    </code></pre>
+                    <h2>When to Use</h2>
+                    <ul>
+                        <li>Resetting default styles across all elements.</li>
+                        <li>Applying global styles like font or background.</li>
+                        <li>Ensuring consistent box-sizing for layout purposes.</li>
+                    </ul>
+                    <h2>Note of Caution</h2>
+                    <p>Using the universal selector can impact performance if overused, as it applies styles to every
+                        element. Use it judiciously for global styles or resets.</p>
+
+                        <pre><code>
+                        /* Example of using the universal selector */
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        </code></pre>
+                        <h2>Explanation:</h2>
+                        <pre>
+                        margin: 0; → removes default margins of all elements
+                        padding: 0; → removes default paddings
+                        box-sizing: border-box; → ensures width/height calculations include padding and border
+                        This combination is commonly used as a CSS reset to make layouts consistent across browsers.</pre>
+                </section>
+
                 <!-- Coming Soon -->
                 <section class="content-section" id="comingsoon">
                     <h2>Coming Soon!</h2>
@@ -209,8 +241,8 @@
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button onclick="window.location.href='#css-home'" class="home-btn">Home</button>
-
+                    <button onclick="window.location.href='#css-home'" class="home-btn">Top</button>
+                    <button onclick="window.location.href='#'" class="next-btn">Next</button>
                 </section>
 
             </article>
