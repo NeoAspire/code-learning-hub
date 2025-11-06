@@ -3,6 +3,45 @@
             display: none;
         }
 
+        /* Alert Message Box Styles */
+        #alert-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9edbe;
+            border: 1px solid #f0c36d;
+            width: 400px;
+            height: 200px;
+            padding: 20px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        #alert-box .alert-content p {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #333;
+        }
+        #alert-box #alert-close-btn {
+            background-color: #f0c36d;
+            border: none;
+            margin-top: 10px;
+            padding:15px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 1rem;
+        }   
+        #alert-box #alert-close-btn:hover {
+            background-color: #e6b24c;
+        }
+
+
         /* Index Page Specific Styles*/
         /* Search + Filter Bar */
         .search-filter {
@@ -69,7 +108,7 @@
             color: #555;
         }
         .youtube-link button {
-            background: #FF0000;
+            background: #4CAF50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -78,7 +117,7 @@
             font-size: 1rem;
         }
         .youtube-link button:hover {
-            background: #cc0000;
+            background: #45a049;
         }
         
 

@@ -46,3 +46,12 @@
         .course-section ul li {
             margin-bottom: 0.5rem;
         }
+        .enroll-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.3rem;
+            margin-top: 1rem;
+        }
