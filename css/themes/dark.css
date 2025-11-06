@@ -175,3 +175,20 @@
 {
     background-color: rgb(41, 40, 40);
 }
+
+/* Youtube link */
+.dark-mode .youtube-link {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .youtube-link h2,
+.dark-mode .youtube-link p {
+    color: #e0e0e0;
+}
+.dark-mode .youtube-link a {
+    color: #bb86fc;
+}
+.dark-mode .youtube-link a:hover {
+    color: #665c5c;
+}

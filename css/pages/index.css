@@ -51,6 +51,37 @@
             grid-column: 1 / -1;
         }
 
+        /* YouTube Link Section */
+        .youtube-link {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 0.5rem;
+            margin: 1rem 1rem;
+        }
+        .youtube-link h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .youtube-link p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        .youtube-link button {
+            background: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .youtube-link button:hover {
+            background: #cc0000;
+        }
+        
+
         /* Course Grid */
         .course-grid {
             display: grid;
