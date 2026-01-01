@@ -12,18 +12,18 @@
     <!-- Link to external JS for layout (e.g., hamburger menu) -->
     <script src="js/base.js"></script>
     <script src="js/alertmsg.js"></script>
-    
+
 </head>
 
 <body>
     <!-- Alert Message Box -->
     <div id="alert-box" style="display: flex;">
-    <div class="alert-content">
-        <p>👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
-            Online classes are coming soon. <br>Stay tuned! 🚀
-        </p>
-        <button id="alert-close-btn">Close</button>
-    </div>
+        <div class="alert-content">
+            <p>👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
+                Online classes are coming soon. <br>Stay tuned! 🚀
+            </p>
+            <button id="alert-close-btn">Close</button>
+        </div>
     </div>
 
     <!-- Header -->
@@ -39,147 +39,51 @@
             <p>Learn HTML, CSS, JavaScript, and more with our free courses!</p>
         </section>
 
-          <!-- YouTube Link Section -->
+        <!-- YouTube Link Section -->
         <section class="youtube-link">
             <h1>Watch Our YouTube Lessons</h1>
-            <p>Learn through engaging video tutorials, tips, and important concepts. Explore the latest tech guides and boost your knowledge today!</p>
-            <button onclick="window.location.href='https://www.youtube.com/@NeoAspire'">Visit Our YouTube Channel</button>
-        </section>
-        
-        <!-- Search + Filter -->
-        <section class="search-filter">
-            <input type="text" id="searchBox" placeholder="Search courses...">
-            <select id="categoryFilter">
-                <option value="">All Categories</option>
-                <option value="web">Web Development</option>
-                <option value="programming">Programming</option>
-                <option value="data">Data Science</option>
-                <option value="design">Design</option>
-            </select>
-            <button onclick="filterCourses()">Search</button>
-            <button onclick="resetFilters()">Reset</button>
-
-            <!-- No Results -->
-            <div class="no-results" id="noResults">
-                ❌ No courses found. Try a different search or category.
-            </div>
+            <p>Learn through engaging video tutorials, tips, and important concepts. Explore the latest tech guides and
+                boost your knowledge today!</p>
+            <button onclick="window.location.href='https://www.youtube.com/@NeoAspire'">Visit Our YouTube
+                Channel</button>
         </section>
 
-      
-        
-        <!-- Course Grid -->
-        <section class="course-grid" id="courseGrid">
-            <div class="course-card" data-category="web">
-                <img src="images/html-logo.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3>HTML Basics</h3>
-                    <p>Learn the structure of web pages with HTML5.</p>
-                    <button onclick="window.location.href='html.html'">Start Learning</button>
+        <!-- Our Services Section -->
+        <section class="our-services">
+            <h1>Our Services</h1>
+            <div class="service-card" data-category="web">
+                <div class="service-content">
+                    <h3>QBANK</h3>
+                    <p>Prepare for exams in Mathematics, Science, Social Science and IT.</p>
+                    <button onclick="window.location.href='qbank.html'">Explore QBank</button>
                 </div>
             </div>
 
-            <div class="course-card" data-category="web">
-                <img src="images/css-logo.png" alt="CSS Course">
-                <div class="course-content">
-                    <h3>CSS Styling</h3>
-                    <p>Make your websites beautiful with CSS3.</p>
-                    <button onclick="window.location.href='css.html'">Start Learning</button>
+            <div class="service-card" data-category="web">
+                <div class="service-content">
+                    <h3>Courses</h3>
+                    <p>Explore our comprehensive course offerings in web development, programming, data science, and
+                        design.</p>
+                    <button onclick="window.location.href='courses.html'">Explore Courses</button>
                 </div>
             </div>
 
-            <div class="course-card" data-category="programming">
-                <img src="images/javascript-logo.png" alt="JS Course">
-                <div class="course-content">
-                    <h3>JavaScript</h3>
-                    <p>Add interactivity and logic to your websites.</p>
-                    <button>Start Learning</button>
+            <div class="service-card" data-category="web">
+                <div class="service-content">
+                    <h3>Downloads</h3>
+                    <p>Access our downloadable software, tools, utilities, and educational resources—designed to boost productivity and learning.</p>
+                    <button onclick="window.location.href='downloads.html'">Explore Downloads</button>
                 </div>
             </div>
 
-            <div class="course-card" data-category="programming">
-                <img src="images/python-logo.png" alt="Python Course">
-                <div class="course-content">
-                    <h3>Python Programming</h3>
-                    <p>Learn Python from basics to advanced concepts.</p>
-                    <button>Start Learning</button>
-                </div>
-            </div>
-
-            <div class="course-card" data-category="data">
-                <img src="images/data-science-logo.png" alt="Data Science">
-                <div class="course-content">
-                    <h3>Data Science</h3>
-                    <p>Analyze and visualize data with modern tools.</p>
-                    <button>Start Learning</button>
-                </div>
-            </div>
-
-            <div class="course-card" data-category="design">
-                <img src="images/ui-design-logo.png" alt="Design">
-                <div class="course-content">
-                    <h3>UI Design</h3>
-                    <p>Create beautiful and user-friendly designs.</p>
-                    <button>Start Learning</button>
-                </div>
-            </div>
         </section>
+
     </main>
 
     <!-- Footer -->
     <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
-
-    <!-- JavaScript for cards and search filter-->
-    <script>
-        function filterCourses() {
-            const searchText = document.getElementById("searchBox").value.toLowerCase();
-            const category = document.getElementById("categoryFilter").value;
-            const courses = document.querySelectorAll(".course-card");
-            const noResults = document.getElementById("noResults");
-
-            let visibleCount = 0;
-
-            courses.forEach(course => {
-                const title = course.querySelector("h3").textContent.toLowerCase();
-                const desc = course.querySelector("p").textContent.toLowerCase();
-                const courseCategory = course.getAttribute("data-category");
-
-                const matchesSearch = title.includes(searchText) || desc.includes(searchText);
-                const matchesCategory = category === "" || courseCategory === category;
-
-                if (matchesSearch && matchesCategory) {
-                    course.classList.remove("hidden");
-                    visibleCount++;
-                } else {
-                    course.classList.add("hidden");
-                }
-            });
-
-            noResults.style.display = (visibleCount === 0) ? "block" : "none";
-        }
-
-        function resetFilters() {
-            document.getElementById("searchBox").value = "";
-            document.getElementById("categoryFilter").value = "";
-            const courses = document.querySelectorAll(".course-card");
-            courses.forEach(course => course.classList.remove("hidden"));
-            document.getElementById("noResults").style.display = "none";
-        }
-
-        // Live search on typing
-        document.getElementById("searchBox").addEventListener("input", filterCourses);
-        document.getElementById("categoryFilter").addEventListener("change", filterCourses);
-
-        // Press Enter to search
-        document.getElementById("searchBox").addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                filterCourses();
-            }
-        });
-    </script>
 </body>
-
 
 </html>

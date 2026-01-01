@@ -63,7 +63,7 @@ article .navigation {
 article button {
     margin: 10px 5px;
     padding: 10px 15px;
-    background-color: #04AA6D;
+    background-color: #E64A19;
     color: white;
     border: none;
     border-radius: 5px;
@@ -74,7 +74,7 @@ article button {
 }
 
 article button:hover {
-    background-color: #039f5b;
+    background-color: #FF5F1F; 
 }
 
 article h1,

@@ -46,11 +46,6 @@
                 <a href="#html-colors">HTML Colors</a>
             </aside>
             <article>
-                <!-- Navigation Buttons -->
-                <section class="navigation">
-                    <button onclick="window.location.href='index.html'" class="home-btn">All Courses</button>
-                </section>
-
                 <!-- HTML Introduction Section -->
                 <section class="content-section" id="html-intro">
                     <h2>Introduction to HTML</h2>
@@ -946,7 +941,7 @@
                         </tr>
                         <tr>
                             <td>maxlength</td>
-                            <td>&lt;input&gt;, &lt;textarea&gt;</td>        
+                            <td>&lt;input&gt;, &lt;textarea&gt;</td>
                             <td>Sets the maximum number of characters allowed in the input field.</td>
                             <td><code>&lt;input type="text" maxlength="10"&gt;</code></td>
                         </tr>
@@ -980,7 +975,7 @@
     &lt;textarea id="message" name="message" rows="4" cols="30" placeholder="Type your message here"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
     &lt;input type="submit" value="Submit"&gt;
 &lt;/form&gt;</code></pre>
-                        
+
                 </section>
 
                 <!-- HTML Iframes -->
@@ -996,7 +991,8 @@
                         <li><strong>src</strong>: Specifies the URL of the page to embed.</li>
                         <li><strong>width</strong>: Sets the width of the iframe (in pixels or percentage).</li>
                         <li><strong>height</strong>: Sets the height of the iframe (in pixels or percentage).</li>
-                        <li><strong>frameborder</strong>: Defines whether to display a border around the iframe (0 for no
+                        <li><strong>frameborder</strong>: Defines whether to display a border around the iframe (0 for
+                            no
                             border, 1 for border).</li>
                         <li><strong>allowfullscreen</strong>: Allows the iframe content to be displayed in fullscreen
                             mode.</li>
@@ -1004,13 +1000,14 @@
                             (values: "lazy", "eager").</li>
                     </ul>
                     <h2>Example:</h2>
-                    <pre><code>&lt;iframe src="https://www.example.com" width="600" height="400" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>    
+                    <pre><code>&lt;iframe src="https://www.example.com" width="600" height="400" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
                 </section>
 
-                 <!-- HTML Media -->
+                <!-- HTML Media -->
                 <section class="content-section" id="html-media">
                     <h2>Media</h2>
-                    <p>In HTML, media elements are used to embed audio and video content into web pages. The main tags used
+                    <p>In HTML, media elements are used to embed audio and video content into web pages. The main tags
+                        used
                         for media are &lt;audio&gt; and &lt;video&gt;.</p>
                     <h2>Audio Element:</h2>
                     <pre><code>&lt;audio controls&gt;
@@ -1026,11 +1023,13 @@
 &lt;/video&gt;</code></pre>
                     <h2>Attributes:</h2>
                     <ul>
-                        <li><strong>controls</strong>: Adds playback controls (play, pause, volume) to the media player.</li>
+                        <li><strong>controls</strong>: Adds playback controls (play, pause, volume) to the media player.
+                        </li>
                         <li><strong>autoplay</strong>: Starts playing the media automatically when the page loads.</li>
                         <li><strong>loop</strong>: Repeats the media continuously.</li>
                         <li><strong>muted</strong>: Mutes the audio by default.</li>
-                        <li><strong>width</strong> and <strong>height</strong>: Sets the dimensions of the video player.</li>
+                        <li><strong>width</strong> and <strong>height</strong>: Sets the dimensions of the video player.
+                        </li>
                     </ul>
                     <h2>Example:</h2>
                     <pre><code>&lt;audio controls&gt;
@@ -1047,7 +1046,8 @@
                 <section class="content-section" id="html-entities">
                     <h2>Entities</h2>
                     <p>In HTML, entities are special codes used to represent characters that have a specific meaning in
-                        HTML or are not easily typed on a keyboard. They are used to display reserved characters, special
+                        HTML or are not easily typed on a keyboard. They are used to display reserved characters,
+                        special
                         symbols, and characters from different languages.</p>
                     <h2>Common HTML Entities:</h2>
                     <table>
@@ -1102,7 +1102,7 @@
                         <tr>
                             <td>&amp;trade;</td>
                             <td>Trademark symbol (™)</td>
-                            <td><code>&amp;trade;</code> renders as ™</td>  
+                            <td><code>&amp;trade;</code> renders as ™</td>
                         </tr>
                         <tr>
                             <td>&amp;hellip;</td>
@@ -1121,10 +1121,11 @@
 
                 </section>
 
-                 <!-- HTML Colors -->
+                <!-- HTML Colors -->
                 <section class="content-section" id="html-colors">
                     <h2>Colors</h2>
-                    <p>In HTML, colors can be specified using various methods, including color names, hexadecimal values,
+                    <p>In HTML, colors can be specified using various methods, including color names, hexadecimal
+                        values,
                         RGB values, HSL values, and CSS variables. Colors are commonly applied to text, backgrounds,
                         borders, and other elements using the <code>style</code> attribute or CSS.</p>
                     <h2>Common Methods to Specify Colors:</h2>
@@ -1214,38 +1215,45 @@
                             <td>Orange</td>
                             <td>#FFA500</td>
                             <td>rgb(255, 165, 0)</td>
-                            <td>hsl(39, 100%, 50%)</td> 
+                            <td>hsl(39, 100%, 50%)</td>
                         </tr>
                         <tr>
                             <td style="background-color: purple;"></td>
                             <td>Purple</td>
                             <td>#800080</td>
                             <td>rgb(128, 0, 128)</td>
-                            <td>hsl(300, 100%, 25%)</td>    
+                            <td>hsl(300, 100%, 25%)</td>
                         </tr>
                     </table>
                     <h2>Gradients</h2>
-                    <p>Gradients are smooth transitions between two or more colors. In HTML/CSS, gradients can be created
+                    <p>Gradients are smooth transitions between two or more colors. In HTML/CSS, gradients can be
+                        created
                         using the <code>background-image</code> property with the <code>linear-gradient</code> or
-                        <code>radial-gradient</code> functions.</p>
+                        <code>radial-gradient</code> functions.
+                    </p>
                     <h2>Gradient Color Codes</h2>
                     <table>
                         <th>Gradient</th>
                         <th>Description</th>
                         <tr>
-                            <td style="background: linear-gradient(to right, red, yellow); height: 50px; width: 100px;"></td>
+                            <td style="background: linear-gradient(to right, red, yellow); height: 50px; width: 100px;">
+                            </td>
                             <td>Linear Gradient from Red to Yellow</td>
                         </tr>
                         <tr>
-                            <td style="background: linear-gradient(to right, blue, green); height: 50px; width: 100px;"></td>
+                            <td style="background: linear-gradient(to right, blue, green); height: 50px; width: 100px;">
+                            </td>
                             <td>Linear Gradient from Blue to Green</td>
                         </tr>
                         <tr>
-                            <td style="background: radial-gradient(circle, purple, pink); height: 50px; width: 100px;"></td>
+                            <td style="background: radial-gradient(circle, purple, pink); height: 50px; width: 100px;">
+                            </td>
                             <td>Radial Gradient from Purple to Pink</td>
                         </tr>
                         <tr>
-                            <td style="background: radial-gradient(circle, orange, yellow); height: 50px; width: 100px;"></td>
+                            <td
+                                style="background: radial-gradient(circle, orange, yellow); height: 50px; width: 100px;">
+                            </td>
                             <td>Radial Gradient from Orange to Yellow</td>
                         </tr>
                     </table>
@@ -1254,9 +1262,10 @@
 background-image: linear-gradient(to right, red, yellow);   
 /* Radial Gradient */
 background-image: radial-gradient(circle, blue, green);</code></pre>
-                    
+
                     <h2>Applying Colors:</h2>
-                    <p>Colors can be applied to various HTML elements using the <code>style</code> attribute. Here are some examples:</p>   
+                    <p>Colors can be applied to various HTML elements using the <code>style</code> attribute. Here are
+                        some examples:</p>
                     <h2>Example:</h2>
                     <pre><code>&lt;h1 style="color: blue;"&gt;This is a blue heading&lt;/h1&gt;
 &lt;p style="background-color: #FFFF00;"&gt;This paragraph has a yellow background.&lt;/p&gt;
