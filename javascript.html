@@ -27,8 +27,16 @@
             <aside>
                 <h2 id="css-home">LEARN JAVASCRIPT</h2>
                 <a href="#intro-javascript">Introduction</a>
-                <a href="#comingsoon">Coming Soon!</a>
-
+                <a href="#basic-syntax">Basic Syntax</a>
+                <a href="#introduction-to-script-tag">Introduction to Script Tag</a>
+                <a href="#javascript-rules">JavaScript Rules</a>
+                <a href="#javascript-input-output">JavaScript Input and Output</a>
+                <a href="#data-types">Data Types</a>
+                <a href="#operators">Operators</a>
+                <a href="#if-else">If-Else Statements</a>
+                <a href="#switch">Switch Case</a>
+                <a href="#for-loop">For Loop</a>
+                <a href="#while-loop">While Loop</a>
 
             </aside>
             <article>
@@ -37,7 +45,536 @@
                     <h2>Introduction to JavaScript</h2>
                     <p>JavaScript is a programming language that enables interactive web pages. It is an interpreted
                         language, meaning it runs without being compiled first.</p>
+                    <p>JavaScript is primarily used for client-side web development, allowing developers to create
+                        dynamic and interactive user interfaces. It can also be used on the server-side with
+                        environments
+                        like Node.js.</p>
+                    <p><b>Some key features of JavaScript include:</b></p>
+                    <ul>
+                        <li>Dynamic typing</li>
+                        <li>First-class functions</li>
+                        <li>Event-driven programming</li>
+                        <li>Asynchronous programming with Promises and async/await</li>
+                    </ul>
+                    <p>JavaScript is supported by all modern web browsers, making it an essential tool for web
+                        developers.</p>
+                    <h2>Versions</h2>
+                    <p>JavaScript has evolved over the years with several versions being released. The most significant
+                        update came with ECMAScript 6 (ES6) in 2015, which introduced many new features such as arrow
+                        functions, classes, template literals, and more.</p>
+
                 </section>
+
+                <!-- Basic Syntax -->
+                <section class="content-section" id="basic-syntax">
+                    <h2>Basic Syntax</h2>
+                    <p>JavaScript syntax is the set of rules that define how JavaScript code is written and interpreted.
+                        Here are some basic syntax elements:</p>
+                    <ul>
+                        <li><strong>Variables:</strong> Used to store data values. Declared using <code>var</code>,
+                            <code>let</code>, or <code>const</code>.
+                            <pre><code>let name = "John";</code></pre>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Data Types:</strong> Common data types include <code>Number</code>,
+                            <code>String</code>, <code>Boolean</code>, <code>Object</code>, and <code>Array</code>.
+                            <pre><code>let age = 30; // Number</code></pre>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Functions:</strong> Blocks of code designed to perform a particular task.
+                            <pre><code>function greet() {   
+    console.log("Hello, World!");
+}</code></pre>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Control Structures:</strong> Includes conditional statements and loops.
+                            <pre><code>if (age > 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}</code></pre>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Events:</strong> Code that runs in response to user actions or other occurrences.
+                            <pre><code>button.addEventListener("click", function() {
+    alert("Button clicked!");
+});</code></pre>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Comments:</strong> Used to explain code and are ignored by the interpreter.
+                            <pre><code>// This is a single-line comment
+/* This is a multi-line comment */</code></pre>
+                        </li>
+                    </ul>
+
+                </section>
+
+
+                <!-- Introduction to Script Tag -->
+                <section class="content-section" id="introduction-to-script-tag">
+                    <h2>Introduction to Script Tag</h2>
+                    <p>The <code>&lt;script&gt;</code> tag is used to embed or reference JavaScript code in an HTML
+                        document.</p>
+                    <pre><code>&lt;script&gt;
+    // JavaScript code goes here
+&lt;/script&gt;</code></pre>
+
+                    <h2>Three ways to include JavaScript</h2>
+                    <ul>
+                        <li><strong>Internal JavaScript:</strong> Within the same HTML file but in a separate
+                            <code>&lt;script&gt;</code> tag.
+                            <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script&gt;
+            function greet() {
+                alert("Hello, World!");
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button onclick="greet()"&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </li>
+                        <li><strong>External JavaScript:</strong> In a separate .js file linked to the HTML file.
+                            <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src="script.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button onclick="greet()"&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </li>
+
+                        <li><strong>Body of the page</strong>: The <code>&lt;script&gt;</code> tag can also be placed
+                            just before the closing
+                            <code>&lt;/body&gt;</code> tag to ensure that the HTML content is loaded before the
+                            JavaScript runs.
+                            <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Page&lt;/title&gt;  
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+        &lt;button onclick="greet()"&gt;Click Me&lt;/button&gt;
+        &lt;script&gt;
+            function greet() {
+                alert("Hello, World!");
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- JavaScript Rules -->
+                <section class="content-section" id="javascript-rules">
+                    <h2>JavaScript Rules</h2>
+                    <ul>
+                        <li><strong>Case Sensitivity:</strong> JavaScript is case-sensitive. Variables named
+                            <code>myVar</code> and <code>myvar</code> are different.</li>
+                        <li><strong>Semicolons:</strong> While not required, semicolons are recommended to end
+                            statements.</li>
+                        <li><strong>Comments:</strong> Use comments to explain code and improve readability.</li>
+                        <li><strong>Variable Naming:</strong> Variable names must start with a letter, underscore (_),
+                            or dollar sign ($). They cannot start with a number and cannot contain spaces.</li>
+                        <li><strong>Reserved Words:</strong> Avoid using JavaScript reserved words (like
+                            <code>if</code>, <code>for</code>, <code>while</code>, etc.) as variable or function names.
+                        </li>
+                        <li><strong>Data Types:</strong> Be aware of JavaScript's dynamic typing and type coercion
+                            rules.</li>
+                        <li><strong>Function Declarations:</strong> Function declarations are hoisted, meaning they can
+                            be called before they are defined in the code.</li>
+                        <li><strong>White Spaces:</strong> JavaScript ignores extra white spaces, but it's good practice
+                            to use them for readability.</li>
+                    </ul>
+                    <h2>Common Errors</h2>
+                    <ul>
+                        <li><strong>Uncaught ReferenceError:</strong> This error occurs when a variable is referenced
+                            but not defined.</li>
+                        <li><strong>Uncaught TypeError:</strong> This error occurs when a value is not of the expected
+                            type.</li>
+                        <li><strong>Uncaught SyntaxError:</strong> This error occurs when the JavaScript parser
+                            encounters invalid syntax.</li>
+                    </ul>
+                </section>
+
+                <!-- JavaScript Input and Output -->
+                <section class="content-section" id="javascript-input-output">
+                    <h2>JavaScript Input and Output</h2>
+                    <p>JavaScript can interact with users through various input/output methods:</p>
+                    <ul>
+                        <li><strong>console.log():</strong> Outputs messages to the browser console for debugging
+                            purposes.</li>
+                        <h3>example:</h3>
+                        <pre><code>console.log("Hello, World!");</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript Console Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        console.log("Hello, World!");
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <li><strong>document.write():</strong> Writes content directly to the HTML document.</li>
+                        <h3>example:</h3>
+                        <pre><code>document.write("Hello, World!");</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript Document Write Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        document.write("Hello, World!");
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <li><strong>alert():</strong> Displays a message in a dialog box.</li>
+                        <h3>example:</h3>
+                        <pre><code>alert("Hello, World!");</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript Alert Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        alert("Hello, World!");
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <li><strong>prompt():</strong> Prompts the user for input.</li>
+                        <h3>example:</h3>
+                        <pre><code>let name = prompt("Enter your name:");</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript Prompt Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let name = prompt("Enter your name:");
+        alert("Hello, " + name + "!");  
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <li><strong>confirm():</strong> Asks the user to confirm or cancel an action.</li>
+                        <h3>example:</h3>
+                        <pre><code>let result = confirm("Are you sure?");</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;    
+&lt;head&gt;
+    &lt;title&gt;JavaScript Confirm Example&lt;/title&gt;       
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let result = confirm("Are you sure?");
+        if (result) {
+            alert("You pressed OK!");
+        } else {    
+            alert("You pressed Cancel!");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;   
+&lt;/html&gt;</code></pre>
+                        <li><strong>DOM Manipulation:</strong> JavaScript can read and modify HTML elements using the
+                            Document Object Model (DOM).</li>
+                        <h3>example:</h3>
+                        <pre><code>document.getElementById("myElement").innerHTML = "Hello, World!";</code></pre>
+                        <h3>Complete code for practice</h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript DOM Manipulation Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="myElement"&gt;Original Text&lt;/h1&gt;
+    &lt;script&gt;
+        document.getElementById("myElement").innerHTML = "Hello, World!";
+    &lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </ul>
+                </section>
+
+                <!-- Data Types -->
+                <section class="content-section" id="data-types">
+                    <h2>Permitive Data Types</h2>
+                    <p>JavaScript has several data types:</p>
+                    <ul>
+                        <li><strong>Number:</strong> Represents both integers and floating-point numbers.</li>
+                        <li><strong>String:</strong> Represents a sequence of characters.</li>
+                        <li><strong>Boolean:</strong> Represents true or false values.</li>
+                        <li><strong>Undefined:</strong> Represents a variable that has been declared but not assigned a
+                            value.</li>
+                        <li><strong>Null:</strong> Represents an intentional absence of any object value.</li>
+                        <li><strong>Object:</strong> A collection of properties and methods.</li>
+                    </ul>
+                    <h2>Variables</h2>
+                    <p>Variables are used to store data values. In JavaScript, you can declare variables using
+                        <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+                    <pre><code>let age = 25; // Number</code></pre>
+                    <pre><code>let name = "Alice"; // String</code></pre>
+                    <pre><code>let isStudent = true; // Boolean</code></pre>
+                    <p>Variable Scope: Variables declared with <code>var</code> have function scope, while variables
+                        declared with <code>let</code> and <code>const</code> have block scope.</p>
+                    <p>Global and Local Scope: Variables declared outside any function are global, while those declared
+                        inside a function are local.</p>
+
+
+                </section>
+
+                <!-- JavaScript Operators -->
+                <section class="content-section" id="operators">
+                    <h2>Operators</h2>
+                    <p>JavaScript supports various operators:</p>
+                    <ul>
+                        <li><strong>Arithmetic Operators:</strong> +, -, *, /, %, **</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let a = 10;
+let b = 5;  
+let sum = a + b; // Addition
+let difference = a - b; // Subtraction
+let product = a * b; // Multiplication
+let quotient = a / b; // Division
+let remainder = a % b; // Modulus
+let power = a ** b; // Exponentiation</code></pre>
+                        <li><strong>Comparison Operators:</strong> ==, ===, !=, !==, >, <,>=, <=< /li>
+                                    <h3>Explanation with example </h3>
+                                    <pre><code>let x = 10;
+let y = "10";
+let isEqual = (x == y); // true (loose equality)
+let isStrictEqual = (x === y); // false (strict equality)
+let isNotEqual = (x != y); // false
+let isGreater = (x > 5); // true
+let isLessOrEqual = (x <= 10); // true</code></pre>
+                        <li><strong>Logical Operators:</strong> &&, ||, !</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let a = true;
+let b = false;
+let andResult = a && b; // false
+let orResult = a || b; // true
+let notA = !a; // false</code></pre>
+                        <li><strong>Increment and Decrement Operators:</strong> ++, --</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let count = 0;
+count++; // Increment count by 1
+count--; // Decrement count by 1</code></pre>
+                        <li><strong>Assignment Operators:</strong> =, +=, -=, *=, /=</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let num = 10;
+num += 5; // num = num + 5
+num -= 3; // num = num - 3
+num *= 2; // num = num * 2
+num /= 4; // num = num / 4</code></pre>
+                    </ul>
+                </section>
+
+                <!-- Conditional Statements if-else -->
+                <section class="content-section" id="if-else">
+                    <h2>Conditional Statements</h2>
+                    <p>JavaScript supports conditional statements for decision-making:</p>
+                    <ul>
+                        <li><strong>If Statement:</strong> Executes code if a condition is true.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+}</code></pre>
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript If Statement Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let age = 18;
+        if (age >= 18) {
+            console.log("You are an adult.");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                        <li><strong>If-Else Statement:</strong> Executes one block of code if a condition is true, and
+                            another block if it's false.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let age = 15;
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}</code></pre>
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript If-Else Statement Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let age = 15;   
+        if (age >= 18) {
+            console.log("You are an adult.");
+        } else {
+            console.log("You are a minor.");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                        <li><strong>If-Else If Statement:</strong> Allows checking multiple conditions.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let grade = "B";
+if (grade === "A") {
+    console.log("Excellent!");
+} else if (grade === "B") {
+    console.log("Good job!");
+} else {
+    console.log("Keep trying!");
+}</code></pre>
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript If-Else If Statement Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let grade = "B";
+        if (grade === "A") {
+            console.log("Excellent!");
+        } else if (grade === "B") {
+            console.log("Good job!");
+        } else {
+            console.log("Keep trying!");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    </ul>
+                </section>
+
+                <!-- Switch Case -->
+                <section class="content-section" id="switch">
+                    <h2>Switch Case</h2>
+                    <p>JavaScript supports the switch statement for multiple conditional checks:</p>
+                    <ul>
+                        <li><strong>Switch Statement:</strong> Evaluates an expression and matches it against several
+                            cases.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("It's Monday.");
+        break;
+    case "Tuesday":
+        console.log("It's Tuesday.");
+        break;
+    default:
+        console.log("It's another day.");
+}</code></pre>
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript Switch Statement Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let day = "Monday";
+        switch (day) {
+            case "Monday":
+                console.log("It's Monday.");
+                break;
+            case "Tuesday":
+                console.log("It's Tuesday.");
+                break;
+            default:
+                console.log("It's another day.");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </ul>
+                </section>
+
+                <!-- For Loop -->
+                <section class="content-section" id="for-loop">
+                    <h2>For Loop</h2>
+                    <p>JavaScript supports the for loop for iterating over a block of code:</p>
+                    <ul>
+                        <li><strong>For Loop:</strong> Executes a block of code a specific number of times.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+                    <h3>Complete code for practice </h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript For Loop Example&lt;/title&gt;
+&lt;/head&gt;   
+&lt;body&gt;
+    &lt;script&gt;
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </ul>
+                </section>
+
+                <!-- While Loop -->
+                <section class="content-section" id="while-loop">
+                    <h2>While Loop</h2>
+                    <p>JavaScript supports the while loop for iterating over a block of code:</p>
+                    <ul>
+                        <li><strong>While Loop:</strong> Executes a block of code as long as a condition is true.</li>
+                        <h3>Explanation with example </h3>
+                        <pre><code>let i = 0;
+while (i < 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+                    <h3>Complete code for practice </h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JavaScript While Loop Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let i = 0;
+        while (i < 5) {
+            console.log(i);
+            i++;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </ul>
+                </section>
+
                 <!-- Coming Soon -->
                 <section class="content-section" id="comingsoon">
                     <h2>Coming Soon!</h2>

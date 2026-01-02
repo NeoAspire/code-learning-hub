@@ -27,10 +27,23 @@
             <aside>
                 <h2 id="css-home">LEARN CSS</h2>
                 <a href="#css-intro">CSS Introduction</a>
-                <a href="#css-grid">CSS Grid</a>
+                <a href="#css-syntax">CSS Syntax</a>
+                <a href="#css-selectors">CSS Selectors</a>
                 <a href="#universal-selector">Universal Selector</a>
-                <a href="#comingsoon">Coming Soon!</a>
-
+                <a href="#css-howto">How to add CSS</a>
+                <a href="#css-comments">CSS Comments</a>
+                <a href="#css-errors">CSS Errors</a>
+                <a href="#css-colors">CSS Colors</a>
+                <a href="#css-backgrounds">CSS Backgrounds</a>
+                <a href="#css-borders">CSS Borders</a>
+                <a href="#css-margins">CSS Margins</a>
+                <a href="#css-padding">CSS Padding</a>
+                <a href="#css-height-width">CSS Height/Width</a>
+                <a href="#css-box-model">CSS Box Model</a>
+                <a href="#css-outline">CSS Outline</a>
+                <a href="#css-text">CSS Text</a>
+                <a href="#css-fonts">CSS Fonts</a>
+                <a href="#css-grid">CSS Grid</a>
 
             </aside>
             <article>
@@ -54,6 +67,903 @@
                         <li>Responsive design – works for desktop, tablet, and mobile.</li>
                         <li>User experience – makes websites attractive and readable.</li>
                     </ol>
+                </section>
+
+                <!-- CSS Syntax -->
+                <section class="content-section" id="css-syntax">
+                    <h2>CSS Syntax</h2>
+                    <p>CSS is made up of rules that tell the browser how to style HTML elements. Each rule consists of a
+                        selector and a declaration block.</p>
+                    <h2>Example of CSS Syntax</h2>
+                    <pre><code>
+/* This is a CSS rule */
+selector {
+    property: value; /* Declaration */
+    property2: value2; /* Another Declaration */
+}   
+                    </code></pre>
+                    <h2>Components Explained</h2>
+                    <ul>
+                        <li><strong>Selector:</strong> Specifies which HTML elements the rule applies to (e.g., h1,
+                            .class, #id).</li>
+                        <li><strong>Declaration Block:</strong> Contains one or more declarations enclosed in curly
+                            braces { }.</li>
+                        <li><strong>Declaration:</strong> Consists of a property and a value, separated by a colon (:).
+                            Each declaration ends with a semicolon (;).</li>
+                    </ul>
+                    <h2>Example Explained</h2>
+                    <pre><code>
+/* Style all h1 elements */
+h1 {
+    color: blue; /* Set text color to blue */
+    font-size: 24px; /* Set font size to 24 pixels */
+}   
+                    </code></pre>
+                    <p>In this example, the selector is <code>h1</code>, and the declaration block contains two
+                        declarations: <code>color: blue;</code> and <code>font-size: 24px;</code>.</p>
+                </section>
+
+                <!-- CSS Selectors -->
+                <section class="content-section" id="css-selectors">
+                    <h2>CSS Selectors</h2>
+                    <p>Selectors are used to target HTML elements in CSS. They determine which elements will be styled
+                        by a rule.</p>
+                    <h2>Types of Selectors</h2>
+                    <ul>
+                        <li><strong>Element Selector:</strong> Targets all elements of a specific type (e.g., p, div,
+                            h1).</li>
+                        <li><strong>Class Selector:</strong> Targets elements with a specific class attribute (e.g.,
+                            .my-class).</li>
+                        <li><strong>ID Selector:</strong> Targets an element with a specific ID attribute (e.g.,
+                            #my-id).</li>
+                        <li><strong>Universal Selector:</strong> Targets all elements on the page (*).</li>
+                    </ul>
+                    <h2>Example of Selectors</h2>
+                    <pre><code>
+/* Element Selector */
+p {
+    color: green;
+}
+/* Class Selector */
+.my-class {
+    font-weight: bold;
+}
+/* ID Selector */
+#my-id {
+    background-color: yellow;
+}
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+                    </code></pre>
+                </section>
+
+                <!-- Universal Selector -->
+                <section class="content-section" id="universal-selector">
+                    <h2>Universal Selector</h2>
+                    <p>In CSS, the * { } syntax is called the universal selector. </p>
+                    <p>It selects all elements on the page, allowing you to apply styles globally.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+                        /* Apply a box-sizing rule to all elements */
+                        * {
+                            box-sizing: border-box;
+                        }
+
+                        /* Set a default font and background for the entire page */
+                        * {
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                        }
+                    </code></pre>
+                    <h2>When to Use</h2>
+                    <ul>
+                        <li>Resetting default styles across all elements.</li>
+                        <li>Applying global styles like font or background.</li>
+                        <li>Ensuring consistent box-sizing for layout purposes.</li>
+                    </ul>
+                    <h2>Note of Caution</h2>
+                    <p>Using the universal selector can impact performance if overused, as it applies styles to every
+                        element. Use it judiciously for global styles or resets.</p>
+
+                    <pre><code>
+                        /* Example of using the universal selector */
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        </code></pre>
+                    <h2>Explanation:</h2>
+                    <pre>
+                        margin: 0; → removes default margins of all elements
+                        padding: 0; → removes default paddings
+                        box-sizing: border-box; → ensures width/height calculations include padding and border
+                        This combination is commonly used as a CSS reset to make layouts consistent across browsers.</pre>
+                </section>
+
+                <!-- How to add CSS -->
+                <section class="content-section" id="css-howto">
+                    <h2>How to Add CSS to HTML</h2>
+                    <p>There are three main ways to add CSS to your HTML documents:</p>
+                    <ol>
+                        <li><strong>Inline CSS:</strong> Adding styles directly to an HTML element using the
+                            <code>style</code> attribute.
+                        </li>
+                        <pre><code>
+&lt;h1 style="color: blue; font-size: 24px;"&gt;Hello World&lt;/h1&gt;
+                        </code></pre>
+                        <li><strong>Internal CSS:</strong> Placing CSS rules within a <code>&lt;style&gt;</code> tag in
+                            the <code>&lt;head&gt;</code> section of your HTML document.</li>
+                        <pre><code>
+&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+                        </code></pre>
+                        <li><strong>External CSS:</strong> Linking to an external CSS file using the
+                            <code>&lt;link&gt;</code>
+                            tag in the <code>&lt;head&gt;</code> section. This is the most common and recommended method
+                            for larger projects.
+                        </li>
+                        <pre><code>
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+                        </code></pre>
+                    </ol>
+                    <h2>Best Practices</h2>
+                    <ul>
+                        <li>Use external CSS for better organization and maintainability.</li>
+                        <li>Avoid inline styles to keep HTML clean and separate from design.</li>
+                        <li>Use internal CSS for small projects or single-page documents.</li>
+                    </ul>
+
+                </section>
+
+                <!-- CSS Comments -->
+                <section class="content-section" id="css-comments">
+                    <h2>CSS Comments</h2>
+                    <p>Comments in CSS are used to explain the code, make it more readable, and to temporarily disable
+                        parts of the code during development.</p>
+                    <h2>How to Write Comments</h2>
+                    <pre><code>
+/* This is a single-line comment */
+/*
+   This is a multi-line comment 
+    that spans multiple lines
+*/
+                    </code></pre>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+h1 {
+    color: blue; /* This comment explains that the text color is set to blue */
+    font-size: 24px; /* This comment explains that the font size is set to 24 pixels */
+}   
+                    </code></pre>
+                    <h2>Best Practices</h2>
+                    <ul>
+                        <li>Use comments to explain complex sections of your CSS code.</li>
+                        <li>Avoid over-commenting; only comment when necessary to improve understanding.</li>
+                        <li>Keep comments up-to-date with code changes to prevent confusion.</li>
+                    </ul>
+
+                </section>
+
+                <!-- CSS Errors -->
+                <section class="content-section" id="css-errors">
+                    <h2>CSS Errors</h2>
+                    <p>CSS errors can occur due to syntax mistakes, incorrect property names, or invalid values. These
+                        errors can lead to unexpected behavior in how styles are applied to your web pages.</p>
+                    <h2>Common CSS Errors</h2>
+                    <ul>
+                        <li><strong>Missing Semicolon:</strong> Forgetting to end a declaration with a semicolon can
+                            cause the entire rule to be ignored.
+                            <pre><code>
+h1 {
+    color: blue /* Missing semicolon here */
+    font-size: 24px;
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>Incorrect Property Name:</strong> Using a property name that doesn't exist will
+                            result in no effect.
+                            <pre><code>
+h1 {
+    colr: blue; /* Incorrect property name */
+    font-size: 24px;
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>Invalid Value:</strong> Assigning a value that is not valid for a property will be
+                            ignored.
+                            <pre><code>
+h1 {
+    color: bluish; /* Invalid value */
+    font-size: 24px;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                    <h2>Debugging CSS Errors</h2>
+                    <ul>
+                        <li>Use browser developer tools to inspect elements and view applied styles.</li>
+                        <li>Check the console for any CSS-related error messages.</li>
+                        <li>Validate your CSS using online validators to catch syntax errors.</li>
+                    </ul>
+
+                </section>
+
+                <!-- CSS Colors -->
+                <section class="content-section" id="css-colors">
+                    <h2>What are CSS Colors?</h2>
+                    <p>CSS colors are used to set the color of text, backgrounds, borders, and other visual elements on
+                        a webpage. There are several ways to define colors in CSS:</p>
+                    <ul>
+                        <li><strong>Color Names:</strong> Predefined color names like red, blue, green, etc.</li>
+                        <li><strong>Hexadecimal Values:</strong> Using a six-digit code preceded by a hash symbol (e.g.,
+                            #FF0000 for red).</li>
+                        <li><strong>RGB Values:</strong> Using red, green, and blue values (e.g., rgb(255, 0, 0) for
+                            red).</li>
+                        <li><strong>HSL Values:</strong> Using hue, saturation, and lightness (e.g., hsl(0, 100%, 50%)
+                            for red).</li>
+                    </ul>
+                    <h2>Example of CSS Color Usage</h2>
+                    <pre><code>
+/* Using color names */
+h1 {
+    color: blue;
+}
+/* Using hexadecimal values */
+p {
+    color: #FF5733; /* A shade of orange */
+}
+/* Using RGB values */
+div {
+    background-color: rgb(0, 255, 0); /* Green background */
+}
+/* Using HSL values */
+section {
+    border-color: hsl(240, 100%, 50%); /* Blue border */
+}
+                    </code></pre>
+                    <h2>Choosing Colors</h2>
+                    <p>When selecting colors for your website, consider the following:</p>
+                    <ul>
+                        <li><strong>Contrast:</strong> Ensure sufficient contrast between text and background for
+                            readability.</li>
+                        <li><strong>Branding:</strong> Use colors that align with your brand identity.</li>
+                        <li><strong>Accessibility:</strong> Choose colors that are accessible to all users, including
+                            those with color blindness.</li>
+                    </ul>
+
+                </section>
+
+                <!-- CSS Backgrounds -->
+                <section class="content-section" id="css-backgrounds">
+                    <h2>CSS Backgrounds</h2>
+                    <p>CSS allows you to style the background of HTML elements using various properties. You can set
+                        background colors, images, and control their positioning and behavior.</p>
+                    <h2>Common Background Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>background-color</td>
+                            <td>Sets the background color of an element</td>
+                            <td>background-color: lightblue;</td>
+                        </tr>
+                        <tr>
+                            <td>background-image</td>
+                            <td>Sets a background image for an element</td>
+                            <td>background-image: url('image.jpg');</td>
+                        </tr>
+                        <tr>
+                            <td>background-repeat</td>
+                            <td>Controls if/how the background image repeats</td>
+                            <td>background-repeat: no-repeat;</td>
+                        </tr>
+                        <tr>
+                            <td>background-size</td>
+                            <td>Specifies the size of the background image</td>
+                            <td>background-size: cover;</td>
+                        </tr>
+                        <tr>
+                            <td>background-position</td>
+                            <td>Sets the starting position of the background image</td>
+                            <td>background-position: center;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Setting a background color */
+body {
+    background-color: #f0f0f0;
+}
+/* Setting a background image */
+header {
+    background-image: url('header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+                    </code></pre>
+                    <h2>Shorthand Properties</h2>
+                    <p>You can also use the shorthand <code>background</code> property to set multiple background
+                        properties at once.</p>
+                    <pre><code>
+section {
+    background: url('section-bg.jpg') no-repeat center/cover lightgray;
+}
+                    </code></pre>
+                </section>
+
+                <!-- CSS Borders -->
+                <section class="content-section" id="css-borders">
+                    <h2>What are CSS Borders?</h2>
+                    <p>CSS borders allow you to add lines around elements. You can customize the border's width, style,
+                        and color.</p>
+                    <h2>CSS Border Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>border-width</td>
+                            <td>Sets the thickness of the border</td>
+                            <td>border-width: 2px;</td>
+                        </tr>
+                        <tr>
+                            <td>border-style</td>
+                            <td>Sets the style of the border (solid, dashed, dotted, etc.)</td>
+                            <td>border-style: solid;</td>
+                        </tr>
+                        <tr>
+                            <td>border-color</td>
+                            <td>Sets the color of the border</td>
+                            <td>border-color: red;</td>
+                        </tr>
+                        <tr>
+                            <td>border-sides</td>
+                            <td>Target specific sides of an element's border</td>
+                            <td>border-top: 2px solid black;</td>
+                        </tr>
+
+                        <tr>
+                            <td>border-radius</td>
+                            <td>Rounds the corners of the border</td>
+                            <td>border-radius: 10px;</td>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Adding a border to a div */
+div {
+    border-width: 3px;
+    border-style: dashed;
+    border-color: blue;
+}
+
+                    </code></pre>
+                    <h2>Shorthand Border Property</h2>
+                    <p>You can also use the shorthand <code>border</code> property to set all border properties at once.
+                    </p>
+                    <pre><code>
+section {
+    border: 4px solid green;
+}
+                    </code></pre>
+                    <h2>Border Sides</h2>
+                    <p>You can target specific sides of an element's border using the following properties:</p>
+                    <ul>
+                        <li><code>border-top</code></li>
+                        <li><code>border-right</code></li>
+                        <li><code>border-bottom</code></li>
+                        <li><code>border-left</code></li>
+                    </ul>
+                    <pre><code>
+article {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+                    </code></pre>
+                    <h2>Border Radius</h2>
+                    <p>The <code>border-radius</code> property rounds the corners of an element's border.</p>
+                    <pre><code>
+div {
+    border-radius: 10px;
+}
+                    </code></pre>
+
+
+                </section>
+
+                <!-- CSS Margins -->
+                <section class="content-section" id="css-margins">
+                    <h2>What are CSS Margins?</h2>
+                    <p>CSS margins control the space around an element. They are the empty space outside the border of
+                        an element.</p>
+                    <h2>CSS Margin Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>margin-top</td>
+                            <td>Sets the top margin of an element</td>
+                            <td>margin-top: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-right</td>
+                            <td>Sets the right margin of an element</td>
+                            <td>margin-right: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-bottom</td>
+                            <td>Sets the bottom margin of an element</td>
+                            <td>margin-bottom: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-left</td>
+                            <td>Sets the left margin of an element</td>
+                            <td>margin-left: 10px;</td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Example Usage -->
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Adding margins to a paragraph */
+p {
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+                    </code></pre>
+
+                    <!-- Shorthand Margin Property -->
+                    <h2>Shorthand Margin Property</h2>
+                    <p>The margin property is a shorthand for setting all four margins at once.</p>
+                    <pre><code>
+/* All four margins are set to 10px */
+div {
+    margin: 10px;
+}
+
+/* Top and bottom margins are 10px, left and right are 15px */
+div {
+    margin: 10px 15px;
+}
+
+/* Top margin is 10px, right and left margins are 15px, bottom margin is 20px */
+div {
+    margin: 10px 15px 20px;
+}
+
+/* Top margin is 10px, right margin is 15px, bottom margin is 20px, left margin is 5px */
+div {
+    margin: 10px 15px 20px 5px;
+}
+                    </code></pre>
+                </section>
+
+                <!-- CSS Padding -->
+                <section class="content-section" id="css-padding">
+                    <h2>What is CSS Padding?</h2>
+                    <p>CSS padding controls the space inside an element, between the content and the border.</p>
+                    <h2>CSS Padding Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>padding-top</td>
+                            <td>Sets the top padding of an element</td>
+                            <td>padding-top: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-right</td>
+                            <td>Sets the right padding of an element</td>
+                            <td>padding-right: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-bottom</td>
+                            <td>Sets the bottom padding of an element</td>
+                            <td>padding-bottom: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-left</td>
+                            <td>Sets the left padding of an element</td>
+                            <td>padding-left: 10px;</td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Example Usage -->
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Adding padding to a paragraph */
+p {
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+}
+                    </code></pre>
+
+                    <!-- Shorthand Padding Property -->
+                    <h2>Shorthand Padding Property</h2>
+                    <p>The padding property is a shorthand for setting all four paddings at once.</p>
+                    <pre><code>
+/* All four paddings are set to 10px */
+div {
+    padding: 10px;
+}
+/* Top and bottom paddings are 10px, left and right are 15px */
+div {
+    padding: 10px 15px;
+}
+/* Top padding is 10px, right and left paddings are 15px, bottom padding is 20px */
+div {
+    padding: 10px 15px 20px;
+}
+/* Top padding is 10px, right padding is 15px, bottom padding is 20px, left padding is 5px */
+div {
+    padding: 10px 15px 20px 5px;
+}
+                    </code></pre>
+                </section>
+
+                <!-- CSS Height/Width -->
+                <section class="content-section" id="css-height-width">
+                    <h2>CSS Height and Width</h2>
+                    <p>CSS height and width properties are used to set the dimensions of HTML elements.</p>
+                    <h2>CSS Height and Width Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>height</td>
+                            <td>Sets the height of an element</td>
+                            <td>height: 200px;</td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td>Sets the width of an element</td>
+                            <td>width: 100%;</td>
+                        </tr>
+                        <tr>
+                            <td>max-height</td>
+                            <td>Sets the maximum height of an element</td>
+                            <td>max-height: 500px;</td>
+                        </tr>
+                        <tr>
+                            <td>max-width</td>
+                            <td>Sets the maximum width of an element</td>
+                            <td>max-width: 800px;</td>
+                        </tr>
+                        <tr>
+                            <td>min-height</td>
+                            <td>Sets the minimum height of an element</td>
+                            <td>min-height: 100px;</td>
+                        </tr>
+                        <tr>
+                            <td>min-width</td>
+                            <td>Sets the minimum width of an element</td>
+                            <td>min-width: 200px;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Setting height and width of a div */
+div {
+    height: 150px;
+    width: 300px;
+}
+                    </code></pre>
+                    <h2>Units You Can Use</h2>
+                    <ul>
+                        <li>px → fixed pixels</li>
+                        <li>% → percentage of container</li>
+                        <li>em → relative to font size</li>
+                        <li>vh/vw → viewport height/width</li>
+                    </ul>
+
+                </section>
+
+                <!-- CSS Box Model -->
+                <section class="content-section" id="css-box-model">
+                    <h2>CSS Box Model</h2>
+                    <p>The CSS box model describes the layout of HTML elements. Each element is represented as a
+                        rectangular box with four main components:</p>
+                    <ul>
+                        <li><strong>Content</strong> - The actual content of the element (text, images, etc.)</li>
+                        <li><strong>Padding</strong> - Space between the content and the border</li>
+                        <li><strong>Border</strong> - The border around the padding and content</li>
+                        <li><strong>Margin</strong> - Space outside the border (between elements)</li>
+                    </ul>
+                    <h2>CSS Box Model Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>padding-top</td>
+                            <td>Sets padding on top side of an element</td>
+                            <td>padding-top: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-right</td>
+                            <td>Sets padding on right side of an element</td>
+                            <td>padding-right: 15px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-bottom</td>
+                            <td>Sets padding on bottom side of an element</td>
+                            <td>padding-bottom: 20px;</td>
+                        </tr>
+                        <tr>
+                            <td>padding-left</td>
+                            <td>Sets padding on left side of an element</td>
+                            <td>padding-left: 15px;</td>
+                        </tr>
+                        <tr>
+                            <td>border-width</td>
+                            <td>Sets the thickness of the border</td>
+                            <td>border-width: 2px;</td>
+                        </tr>
+                        <tr>
+                            <td>border-style</td>
+                            <td>Sets the style of the border (solid, dashed, dotted, etc.)</td>
+                            <td>border-style: solid;</td>
+                        </tr>
+                        <tr>
+                            <td>border-color</td>
+                            <td>Sets the color of the border</td>
+                            <td>border-color: red;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-top</td>
+                            <td>Sets the top margin of an element</td>
+                            <td>margin-top: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-right</td>
+                            <td>Sets the right margin of an element</td>
+                            <td>margin-right: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-bottom</td>
+                            <td>Sets the bottom margin of an element</td>
+                            <td>margin-bottom: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>margin-left</td>
+                            <td>Sets the left margin of an element</td>
+                            <td>margin-left: 10px;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Example of CSS Box Model */
+div {
+    padding: 15px; /* Space inside the box */
+    border: 2px solid black; /* Border around the box */
+    margin: 20px; /* Space outside the box */
+}
+                    </code></pre>
+                    <h2>Visual Representation</h2>
+                    <p>Here’s a visual representation of the CSS box model:</p>
+                    <pre><code> 
++---------------------------+
+|        Margin             |
+|  +---------------------+  |
+|  |      Border         |  |
+|  |  +---------------+  |  |
+|  |  |   Padding     |  |  |
+|  |  |  +---------+  |  |  |
+|  |  |  | Content |  |  |  |
+|  |  |  +---------+  |  |  |
+|  |  +---------------+  |  |
+|  +---------------------+  |
++---------------------------+
+                    </code></pre>
+
+
+                </section>
+
+                <!-- CSS Outline -->
+                <section class="content-section" id="css-outline">
+                    <h2>What is CSS Outline?</h2>
+                    <p>CSS outline is a line that is drawn around an element, outside the border edge.
+                        Unlike border, outline does not take up space and does not affect the layout of the element.
+                        It is used to highlight elements for accessibility purposes or visual emphasis.</p>
+                    <h2>CSS Outline Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>outline-style</td>
+                            <td>Sets the style of the outline (solid, dashed, dotted, etc.)</td>
+                            <td>outline-style: solid;</td>
+                        </tr>
+                        <tr>
+                            <td>outline-color</td>
+                            <td>Sets the color of the outline</td>
+                            <td>outline-color: blue;</td>
+                        </tr>
+                        <tr>
+                            <td>outline-width</td>
+                            <td>Sets the width of the outline</td>
+                            <td>outline-width: 3px;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Adding an outline to a button */
+button {
+    outline-style: dashed;
+    outline-color: red;
+    outline-width: 2px;
+}
+                    </code></pre>
+                    <h2>Shorthand Outline Property</h2>
+                    <p>You can also use the shorthand <code>outline</code> property to set all outline properties at
+                        once.</p>
+                    <pre><code>
+div {
+    outline: 2px solid green;
+}
+                    </code></pre>
+                </section>
+
+                <!-- CSS Text -->
+                <section class="content-section" id="css-text">
+                    <h2>CSS Text</h2>
+                    <p>CSS text properties allow you to style and format text within HTML elements. You can control
+                        font size, color, alignment, decoration, and more.</p>
+                    <h2>Common Text Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>Sets the color of the text</td>
+                            <td>color: black;</td>
+                        </tr>
+                        <tr>
+                            <td>text-align</td>
+                            <td>Aligns the text (left, right, center, justify)</td>
+                            <td>text-align: center;</td>
+                        </tr>
+                        <tr>
+                            <td>text-decoration</td>
+                            <td>Adds decoration to text (underline, overline, line-through)</td>
+                            <td>text-decoration: underline;</td>
+                        </tr>
+                        <tr>
+                            <td>line-height</td>
+                            <td>Sets the height of lines of text</td>
+                            <td>line-height: 1.5;</td>
+                        </tr>
+                        <tr>
+                            <td>text-transform</td>
+                            <td>Controls capitalization (uppercase, lowercase, capitalize)</td>
+                            <td>text-transform: uppercase;</td>
+                        </tr>
+                        <tr>
+                            <td>letter-spacing</td>
+                            <td>Sets the space between characters</td>
+                            <td>letter-spacing: 2px;</td>
+                        </tr>
+                        <tr>
+                            <td>word-spacing</td>
+                            <td>Sets the space between words</td>
+                            <td>word-spacing: 4px;</td>
+                        </tr>
+                        <tr>
+                            <td>white-space</td>
+                            <td>Controls how whitespace is handled</td>
+                            <td>white-space: nowrap;</td>
+                        </tr>
+                        <tr>
+                            <td>text-indent</td>
+                            <td>Indents the first line of text</td>
+                            <td>text-indent: 30px;</td>
+                        </tr>
+                        <tr>
+                            <td>line-height</td>
+                            <td>Sets the height of lines of text</td>
+                            <td>line-height: 1.5;</td>
+                        </tr>
+                        <tr>
+                            <td>text-shadow</td>
+                            <td>Adds shadow to text</td>
+                            <td>text-shadow: 2px 2px 5px gray;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>
+/* Styling text in a paragraph */
+p {
+    color: #333333;
+    text-align: justify;
+    text-decoration: none;
+    line-height: 1.6;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    white-space: normal;
+    text-indent: 20px;
+    text-shadow: 1px 1px 3px lightgray;
+}
+                    </code></pre>
+                </section>
+
+                <!-- CSS Fonts -->
+                <section class="content-section" id="css-fonts">
+                    <h2>CSS Fonts</h2>
+                    <p>CSS font properties allow you to control the appearance of text by specifying font family,
+                        size, weight, style, and more.</p>
+                    <h2>Common Font Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>font-family</td>
+                            <td>Specifies the font of the text</td>
+                            <td>font-family: Arial, sans-serif;</td>
+                        </tr>
+                        <tr>
+                            <td>font-size</td>
+                            <td>Sets the size of the font</td>
+                            <td>font-size: 16px;</td>
+                        </tr>
+                        <tr>
+                            <td>font-weight</td>
+                            <td>Sets the weight (boldness) of the font</td>
+                            <td>font-weight: bold;</td>
+                        </tr>
+                        <tr>
+                            <td>font-style</td>
+                            <td>Sets the style of the font (normal, italic, oblique)</td>
+                            <td>font-style: italic;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    
+                    
+
                 </section>
 
                 <!-- CSS Grid -->
@@ -184,57 +1094,14 @@
                         grid-area: footer;
                         }
                     </code></pre>
-                </section>
 
-                <!-- Universal Selector -->
-                <section class="content-section" id="universal-selector">
-                    <h2>Universal Selector</h2>
-                    <p>In CSS, the * { } syntax is called the universal selector. </p>
-                    <p>It selects all elements on the page, allowing you to apply styles globally.</p>
-                    <h2>Example Usage</h2>
-                    <pre><code>
-                        /* Apply a box-sizing rule to all elements */
-                        * {
-                            box-sizing: border-box;
-                        }
 
-                        /* Set a default font and background for the entire page */
-                        * {
-                            font-family: Arial, sans-serif;
-                            background-color: #f0f0f0;
-                        }
-                    </code></pre>
-                    <h2>When to Use</h2>
-                    <ul>
-                        <li>Resetting default styles across all elements.</li>
-                        <li>Applying global styles like font or background.</li>
-                        <li>Ensuring consistent box-sizing for layout purposes.</li>
-                    </ul>
-                    <h2>Note of Caution</h2>
-                    <p>Using the universal selector can impact performance if overused, as it applies styles to every
-                        element. Use it judiciously for global styles or resets.</p>
-
-                    <pre><code>
-                        /* Example of using the universal selector */
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                        }
-                        </code></pre>
-                    <h2>Explanation:</h2>
-                    <pre>
-                        margin: 0; → removes default margins of all elements
-                        padding: 0; → removes default paddings
-                        box-sizing: border-box; → ensures width/height calculations include padding and border
-                        This combination is commonly used as a CSS reset to make layouts consistent across browsers.</pre>
                 </section>
 
                 <!-- Coming Soon -->
                 <section class="content-section" id="comingsoon">
                     <h2>Coming Soon!</h2>
                 </section>
-
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
