@@ -1,0 +1,151 @@
+# ==============================
+# Secrets and sensitive files
+# ==============================
+secrets/                 # Entire secrets folder
+payments.html             # Payment page
+config.json               # API or script URLs
+.env
+credentials.txt
+
+# ==============================
+# External libraries / vendor files
+# ==============================
+vendor/                  # If you downloaded libraries manually
+libs/
+external/
+*.min.js
+*.min.css
+
+# ==============================
+# Logs, temporary, and backup files
+# ==============================
+*.log
+*.tmp
+*.bak
+*~
+
+# ==============================
+# System files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# IDE / editor specific files
+# ==============================
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# ==============================
+# Node.js files
+# ==============================
+node_modules/
+package-lock.json
+yarn.lock
+
+# ==============================
+# Python files
+# ==============================
+__pycache__/
+*.pyc
+venv/
+.env.local
+.env.development
+.env.test
+.env.production
+.env/
+.envrc
+
+# ==============================
+# Java / compiled files
+# ==============================
+*.class
+*.obj
+*.jar
+*.war
+
+# ==============================
+# Build / distribution / coverage
+# ==============================
+build/
+dist/
+coverage/
+coverage.xml
+
+# ==============================
+# Database files
+# ==============================
+*.sqlite
+*.db
+*.sql
+
+# ==============================
+# Media files
+# ==============================
+*.mp4
+*.mp3
+*.avi
+*.mov
+*.mkv
+*.wav
+*.flac
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.bmp
+*.tiff
+
+# ==============================
+# Fonts
+# ==============================
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+
+# ==============================
+# Archives / executables / installers
+# ==============================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+*.iso
+*.dmg
+*.exe
+*.msi
+*.dll
+*.bin
+*.img
+*.msix
+*.msixbundle
+*.cab
+*.msu
+*.msp
+*.sys
+*.drv
+*.lnk
+
+# ==============================
+# Cloud / Google Drive files
+# ==============================
+*.gdoc
+*.gsheet
+*.gslides
+*.gdraw
+
+# ==============================
+# Docker files
+# ==============================
+docker-compose.override.yml
+Dockerfile.dev
+docker-compose.dev.yml
