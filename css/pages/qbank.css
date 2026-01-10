@@ -60,3 +60,53 @@
   display: block;
 }
 
+
+/* Pay and Download Model*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+    text-align: center;
+    overflow: auto;
+}
+.modal p{
+  color: white;
+ padding: 0.2rem;
+}
+
+.modal iframe {
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    border: none;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#payment-section {
+    margin-top: 20px;
+}
+
+#payment-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #E64A19;
+    color: white;
+    border-radius: 0.5rem;
+}
+#payment-section button:hover{
+  background-color: #FF5F1F;
+}
+

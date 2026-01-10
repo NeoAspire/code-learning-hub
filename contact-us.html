@@ -36,7 +36,7 @@
                 <input type="email" id="email" name="email" placeholder="Your email address" required>
 
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" placeholder="Your phone number" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
@@ -55,17 +55,26 @@
 <!-- Google Apps Script Form Submission -->
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz0lC9yH75Ak2ytX7NgUSQlD41jPmgQu90jZzd7n8Xk8ttgQBBp-fJeK3kSi3akPJnT-A/exec';
-    const form = document.forms['myForm'];
+    const form = document.getElementById('myForm');
 
     form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-                alert('Thank you for contacting us! We will get back to you soon.');
-                form.reset();
-            })
-            .catch(error => console.error('Error!', error.message));
-    });
+    e.preventDefault();
+
+    const button = form.querySelector('button');
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(() => {
+            alert('Thank you for contacting us! We will get back to you soon.');
+            form.reset();
+        })
+        .catch(error => alert('Submission failed'))
+        .finally(() => {
+            button.disabled = false;
+            button.textContent = 'Submit';
+        });
+});
 </script>
 
 </body>
