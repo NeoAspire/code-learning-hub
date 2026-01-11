@@ -36,10 +36,14 @@
                 <div class="dropdown">
                     <button class="dropbtn">Class 10 IT (402)</button>
                     <div class="dropdown-content">
-                        <a href="https://drive.google.com/file/d/14l49gQ7u0_KnVARCj_PvASdl31eYGTBw/view?usp=drive_link"
-                            target="_blank">Employability Skills Part A</a>
-                        <a href="https://drive.google.com/file/d/16DvLVTvYUkuVHnrIpceloz721Lcx67m4/view?usp=drive_link"
-                            target="_blank">Information Technology Part B </a>
+                        <a href="#" class="openPdf"
+                            data-pdf="https://drive.google.com/file/d/1ZjU7D7P7xW_Lbt_e5xXBYErmygrQhK6D/preview">
+                            🔒 Employability Skills Part A
+                        </a>
+                        <a href="#" class="openPdf"
+                            data-pdf="https://drive.google.com/file/d/1PAWN609MJ98EcZgdC92QGKgL7UEJ1zQp/preview">
+                            🔒 Information Technology Part B
+                        </a>
                     </div>
                 </div>
             </div>
@@ -49,7 +53,9 @@
                 <div class="dropdown">
                     <button class="dropbtn">Class 10 Maths</button>
                     <div class="dropdown-content">
-                        <a href="#">Coming Soon!</a>
+                        <a href="#" class="openPdf" data-pdf="#">
+                            🔒 Coming Soon!
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,7 +65,10 @@
                 <div class="dropdown">
                     <button class="dropbtn">Class 10 Science</button>
                     <div class="dropdown-content">
-                        <a href="#" id="openPdf">🔒 Study Material Preview</a>
+                        <a href="#" class="openPdf"
+                            data-pdf="https://drive.google.com/file/d/1PllxEZ-sqx2Zl3KcedgtJmqAXDX-19Bz/preview">
+                            🔒 Study Material Preview
+                        </a>
                     </div>
                 </div>
             </div>
@@ -75,7 +84,6 @@
                 </div>
             </div>
 
-
         </section>
 
     </main>
@@ -85,50 +93,47 @@
         <!-- Footer content will be loaded here -->
     </footer>
 
+    <!-- PDF Modal & Payment Script -->
     <script>
-        // Open PDF in modal
-        document.getElementById('openPdf').addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById('pdfModal').style.display = 'block';
+        // Open PDF in modal (for ALL subjects)
+        document.querySelectorAll('.openPdf').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
 
-            // Load PDF preview (Google Drive preview link)
-            document.getElementById('pdfPreview').src =
-                'https://drive.google.com/file/d/1ewjLACYduPLHiBuETmgVta7rt_MvQG0x/preview';
+                const pdfUrl = this.dataset.pdf;
 
-            // Show payment prompt after 2 seconds
-            setTimeout(function () {
-                document.getElementById('payment-section').style.display = 'block';
-            }, 2000);
+                document.getElementById('pdfModal').style.display = 'block';
+                document.getElementById('pdfPreview').src = pdfUrl;
+
+                // Hide payment section initially
+                document.getElementById('payment-section').style.display = 'none';
+
+                // Show payment prompt after 2 seconds
+                setTimeout(() => {
+                    document.getElementById('payment-section').style.display = 'block';
+                }, 2000);
+            });
         });
 
-        // Payment & download functionality
+        // Pay & Download
         document.getElementById('payButton').addEventListener('click', function () {
-            
-            // Step 1: Redirect to payment gateway
-            let paymentLink = 'secrets/payments.html'; // Replace with Razorpay, PayPal, etc.
-            window.open(paymentLink, '_blank');
-
-            // Step 2: After payment, allow download (simulated here)
-            // You can replace this with a server-side confirmation in real apps
-            setTimeout(function () {
-                // Full PDF download link (different from preview)
-                let fullPdfLink = 'https://drive.google.com/uc?export=download&id=YOUR_FULL_PDF_FILE_ID';
-                window.open(fullPdfLink, '_blank');
-            }, 5000); // 5 seconds delay to simulate payment completion
+            // Redirect to payment page
+            window.location.href = "/secrets/payments.html"; // ✅ correct path
         });
 
         // Close modal
         document.querySelector('.close').addEventListener('click', function () {
             document.getElementById('pdfModal').style.display = 'none';
+            document.getElementById('pdfPreview').src = '';
         });
 
-        // Close modal if clicked outside iframe
-        window.onclick = function (event) {
-            if (event.target == document.getElementById('pdfModal')) {
+        // Close modal on outside click
+        window.addEventListener('click', function (event) {
+            if (event.target === document.getElementById('pdfModal')) {
                 document.getElementById('pdfModal').style.display = 'none';
+                document.getElementById('pdfPreview').src = '';
             }
-        }
-
+        });
     </script>
 
 </body>

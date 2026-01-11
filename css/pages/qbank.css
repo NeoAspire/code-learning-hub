@@ -32,16 +32,19 @@
 
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  z-index: 1;
-  background-color:#1F2937;1
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color:#1F2937;
   border-radius: 8px;
-  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
