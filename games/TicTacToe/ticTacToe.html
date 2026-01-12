@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- APPLE MOBILE WEB APP METADATA -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    <!-- PWA (Progressive Web App) METADATA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ICONS -->
+    <link rel="icon" sizes="192x192" href="icon-192.png">
+    <link rel="icon" sizes="512x512" href="icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">   
+
+    
+    <!-- STYLES -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .mode-select button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #status {
+            margin: 15px 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background: purple;
+            color: white;
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cell.taken {
+            cursor: not-allowed;
+        }
+
+        #resetBtn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: purple;
+            border: 2px solid black;
+            border-radius: 5px;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #6a0dad;
+        }
+
+        h1 {
+            color: #6a0dad;        
+            background-color: #dfcef3; 
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .gamemode {
+            color: #6a0dad;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* ===== POPUP ===== */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 250px;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <!-- MODE SELECTION -->
+        <div class="mode-select">
+            <button onclick="selectMode('PVP')">👥 2 Players</button>
+            <button onclick="selectMode('PVC')">🤖 vs Computer</button>
+        </div>
+        <!-- STATUS DISPLAY -->
+        <div id="status" class="gamemode">Select Game Mode</div>
+        <!-- GAME BOARD -->
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <!-- RESET BUTTON -->
+        <button id="resetBtn">Restart Game</button>
+    </div>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2 id="popupMessage"></h2>
+            <button onclick="closePopup()">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        <!-- GAME LOGIC -->
+        // DOM Elements
+        const cells = document.querySelectorAll('.cell');
+        const statusText = document.getElementById('status');
+        const popup = document.getElementById('popup');
+        const popupMessage = document.getElementById('popupMessage');
+        
+        // Game Variables
+        let currentPlayer = "X";
+        let gameState = ["", "", "", "", "", "", "", "", ""];
+        let gameActive = false;
+        let gameMode = "";
+
+        // Winning Conditions
+        const winningConditions = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+        // Functions Selection Mode
+        function selectMode(mode) {
+            gameMode = mode;
+            restartGame();
+            gameActive = true;
+            statusText.innerText = "Player X's Turn";
+        }
+        // Handle Cell Clicks
+        function handleCellClick(e) {
+            const index = e.target.dataset.index;
+
+            if (!gameActive || gameState[index] !== "") return;
+
+            makeMove(index, currentPlayer);
+            checkResult();
+
+            if (gameMode === "PVC" && gameActive && currentPlayer === "O") {
+                setTimeout(computerMove, 500);
+            }
+        }
+        // Make Move
+        function makeMove(index, player) {
+            gameState[index] = player;
+            cells[index].innerText = player;
+            cells[index].classList.add("taken");
+        }
+        // Computer Move Logic
+        function computerMove() {
+            // 1️⃣ Try to WIN
+            let move = findBestMove("O");
+            if (move !== null) {
+                makeMove(move, "O");
+                checkResult();
+                return;
+            }
+
+            // 2️⃣ Try to BLOCK Player X
+            move = findBestMove("X");
+            if (move !== null) {
+                makeMove(move, "O");
+                checkResult();
+                return;
+            }
+
+            // 3️⃣ Take CENTER if free
+            if (gameState[4] === "") {
+                makeMove(4, "O");
+                checkResult();
+                return;
+            }
+
+            // 4️⃣ Take a CORNER
+            const corners = [0, 2, 6, 8].filter(i => gameState[i] === "");
+            if (corners.length > 0) {
+                makeMove(corners[Math.floor(Math.random() * corners.length)], "O");
+                checkResult();
+                return;
+            }
+
+            // 5️⃣ Take ANY remaining spot
+            const emptyCells = gameState
+                .map((v, i) => v === "" ? i : null)
+                .filter(v => v !== null);
+
+            makeMove(emptyCells[0], "O");
+            checkResult();
+        }
+        // Find Best Move for WIN or BLOCK
+        function findBestMove(player) {
+            for (let condition of winningConditions) {
+                const [a, b, c] = condition;
+                const line = [gameState[a], gameState[b], gameState[c]];
+
+                if (
+                    line.filter(v => v === player).length === 2 &&
+                    line.includes("")
+                ) {
+                    if (gameState[a] === "") return a;
+                    if (gameState[b] === "") return b;
+                    if (gameState[c] === "") return c;
+                }
+            }
+            return null;
+        }
+
+        // Check Game Result
+        function checkResult() {
+            for (let condition of winningConditions) {
+                const [a, b, c] = condition;
+
+                if (gameState[a] &&
+                    gameState[a] === gameState[b] &&
+                    gameState[a] === gameState[c]) {
+
+                    gameActive = false;
+                    showPopup(`🎉 Player ${currentPlayer} Wins!`);
+                    return;
+                }
+            }
+
+            if (!gameState.includes("")) {
+                gameActive = false;
+                showPopup("😐 It's a Draw!");
+                return;
+            }
+
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            statusText.innerText = `Player ${currentPlayer}'s Turn`;
+        }
+        // Popup Functions
+        function showPopup(message) {
+            popupMessage.innerText = message;
+            popup.style.display = "flex";
+        }
+        // Close Popup
+        function closePopup() {
+            popup.style.display = "none";
+            restartGame();
+        }
+        // Restart Game
+        function restartGame() {
+            currentPlayer = "X";
+            gameState = ["", "", "", "", "", "", "", "", ""];
+            gameActive = false;
+            statusText.innerText = "Select Game Mode";
+            cells.forEach(cell => {
+                cell.innerText = "";
+                cell.classList.remove("taken");
+            });
+        }
+        // Event Listeners
+        cells.forEach(cell => cell.addEventListener("click", handleCellClick));
+        document.getElementById("resetBtn").addEventListener("click", restartGame);
+    </script>
+
+    <!-- SERVICE WORKER REGISTRATION -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker Registered"));
+        }
+    </script>
+    </body>
+
+</html>
