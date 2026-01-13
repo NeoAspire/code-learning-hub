@@ -2,7 +2,7 @@
 /* js/layout */
 async function loadLayout() {
     try {
-        const response = await fetch('base.html');
+        const response = await fetch('/base.html');
         const text = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
@@ -15,6 +15,18 @@ async function loadLayout() {
 
         setupHamburgerNav(); // Setup hamburger after header loads
         setupDarkModeToggle(); // Setup dark mode toggle after header loads 
+
+        // Dynamic Fiscal Year Display
+        const startYear = 2025; // Year your project/company started
+        const currentYear = new Date().getFullYear();
+
+        // Show only last two digits of current year if different from start year
+        const displayYear = (currentYear === startYear)
+            ? startYear
+            : `${startYear} - ${currentYear.toString().slice(-2)}`;
+
+        document.getElementById("fiscal-year").textContent = displayYear;
+   
     } 
     catch (error) {
         console.error('Error loading layout:', error);

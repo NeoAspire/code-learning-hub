@@ -5,19 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <!-- APPLE MOBILE WEB APP METADATA -->
+
+    <!-- PWA / THEME -->
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Apple PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+    <!-- Android PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- PWA (Progressive Web App) METADATA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffffff">
-    <!-- ICONS -->
-    <link rel="icon" sizes="192x192" href="icon-192.png">
-    <link rel="icon" sizes="512x512" href="icon-512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">   
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 
-    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
     <!-- STYLES -->
     <style>
         body {
@@ -89,8 +95,8 @@
         }
 
         h1 {
-            color: #6a0dad;        
-            background-color: #dfcef3; 
+            color: #6a0dad;
+            background-color: #dfcef3;
             padding: 10px;
             border-radius: 8px;
         }
@@ -157,6 +163,7 @@
             <div class="cell" data-index="7"></div>
             <div class="cell" data-index="8"></div>
         </div>
+
         <!-- RESET BUTTON -->
         <button id="resetBtn">Restart Game</button>
     </div>
@@ -170,13 +177,13 @@
     </div>
 
     <script>
-        <!-- GAME LOGIC -->
+        // GAME LOGIC
         // DOM Elements
         const cells = document.querySelectorAll('.cell');
         const statusText = document.getElementById('status');
         const popup = document.getElementById('popup');
         const popupMessage = document.getElementById('popupMessage');
-        
+
         // Game Variables
         let currentPlayer = "X";
         let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -284,20 +291,27 @@
                     gameState[a] === gameState[c]) {
 
                     gameActive = false;
-                    showPopup(`🎉 Player ${currentPlayer} Wins!`);
+                    // Delay popup to ensure last move is rendered
+                    setTimeout(() => {
+                        showPopup(`🎉 Player ${currentPlayer} Wins!`);
+                    }, 1000);
                     return;
                 }
             }
 
             if (!gameState.includes("")) {
                 gameActive = false;
-                showPopup("😐 It's a Draw!");
+                // Delay popup to ensure last move is rendered
+                setTimeout(() => {
+                    showPopup("😐 It's a Draw!");
+                }, 1000);
                 return;
             }
 
             currentPlayer = currentPlayer === "X" ? "O" : "X";
             statusText.innerText = `Player ${currentPlayer}'s Turn`;
         }
+
         // Popup Functions
         function showPopup(message) {
             popupMessage.innerText = message;
@@ -331,6 +345,6 @@
                 .then(() => console.log("Service Worker Registered"));
         }
     </script>
-    </body>
+</body>
 
 </html>

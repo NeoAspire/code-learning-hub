@@ -6,47 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
     <!-- Dark Mode Script -->
-    <script src="js/dark-mode.js" defer></script>
+    <script src="/js/dark-mode.js" defer></script>
 </head>
 
 <body>
     <!-- Header -->
     <header id="site-header">
-        <a href="https://www.neoaspire.in/" class="logo">
-            <img src="images/favicon/logo.png" alt="Site Logo">
+        <a href="/https://www.neoaspire.in/" class="logo">
+            <img src="/images/favicon/logo.png" alt="Site Logo">
             <h1>NeoAspire</h1>
         </a>
-  
+
         <nav>
             <!-- Hamburger Menu -->
             <span class="nav-hamburger">&#9776;</span>
             <!-- Navigation Links -->
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="qbank.html">QBank</a>
-                <a href="courses.html">Courses</a>
-                <a href="downloads.html">Downloads</a>
-                <a href="contact-us.html">Contact Us</a>
+                <a href="/index.html">Home</a>
+                <a href="/about/">About</a>
+                <a href="/qbank.html">QBank</a>
+                <a href="/courses.html">Courses</a>
+                <a href="/downloads.html">Downloads</a>
+                <a href="/contact-us.html">Contact Us</a>
             </div>
             <!-- Dark Mode Button -->
-                <button class="dark-mode-button" id="dark-mode-toggle">🌙</button>
+            <button class="dark-mode-button" id="dark-mode-toggle">🌙</button>
         </nav>
     </header>
 
     <!-- Main -->
     <main>
         <!-- Page Content-->
- 
+
     </main>
 
     <!-- Footer -->
     <footer id="site-footer">
-        <p>© 2025 NeoAspire. All rights reserved.</p>
+        <p>© <span id="fiscal-year"></span> NeoAspire. All rights reserved.</p>
     </footer>
 
     <!-- Script to load hamburger -->
@@ -66,6 +66,20 @@
             }
         });
     </script>
+
+    <!-- Script to handle dynamic fiscal year display -->
+    <script>
+        const startYear = 2025; // Year your project/company started
+        const currentYear = new Date().getFullYear();
+
+        // Show only last two digits of current year if different from start year
+        const displayYear = (currentYear === startYear)
+            ? startYear
+            : `${startYear} - ${currentYear.toString().slice(-2)}`;
+
+        document.getElementById("fiscal-year").textContent = displayYear;
+    </script>
+
 
 </body>
 
