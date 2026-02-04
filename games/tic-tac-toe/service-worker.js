@@ -4,9 +4,9 @@ const FILES_TO_CACHE = [
   "/tic-tac-toe/",
   "/tic-tac-toe/index.html",
   "/tic-tac-toe/manifest.json",
-  "/tic-tac-toe/icon-192.png",
-  "/tic-tac-toe/icon-512.png",
-  "/tic-tac-toe/apple-touch-icon.png"
+  "/tic-tac-toe/images/icon-192.png",
+  "/tic-tac-toe/images/icon-512.png",
+  "/tic-tac-toe/images/apple-touch-icon.png"
 ];
 
 /* INSTALL */
