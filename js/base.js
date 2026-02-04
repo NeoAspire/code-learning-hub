@@ -17,7 +17,7 @@ async function loadLayout() {
         setupDarkModeToggle(); // Setup dark mode toggle after header loads 
 
         // Dynamic Fiscal Year Display
-        const startYear = 2025; // Year your project/company started
+        const startYear = 2023; // Year your project/company started
         const currentYear = new Date().getFullYear();
 
         // Show only last two digits of current year if different from start year
