@@ -92,9 +92,6 @@ coverage.xml
 *.mkv
 *.wav
 *.flac
-*.jpg
-*.jpeg
-*.png
 *.gif
 *.svg
 *.bmp
