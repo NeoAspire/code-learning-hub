@@ -12,7 +12,7 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             text-align: center;
-            color: #4CAF50;
+            color:  #E64A19;
         }
 
         .about-section p {
@@ -58,23 +58,4 @@
             margin-bottom: 0.5rem;
         }
 
-        .about-section a {
-            display: block;
-            margin: 1rem auto 0 auto;
-            background: #4CAF50;
-            color: white;
-            padding: 8px 12px;
-            /* Same as .course-content button */
-            border-radius: 4px;
-            /* Same as .course-content button */
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            transition: background 0.3s ease;
-            max-width: 200px;
-            /* Optional: limits button width */
-        }
-
-        .about-section a:hover {
-            background: #45a049;
-        }
+     

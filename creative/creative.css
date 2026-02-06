@@ -1,0 +1,276 @@
+/* Creative Hub styles */
+
+:root{
+	--primary:#E64A19; /* main buttons / highlights (orange) */
+	--hero:#4CAF50; /* hero background (green) */
+	--accent:#5b8cff;
+	--muted:#6b7280;
+	--bg:#f8fafc;
+	--card-bg:#ffffff;
+}
+
+/* Hero Section */
+.creations-hero {
+    background-color: var(--hero);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.creations-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.creations-hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid */
+.creative-grid {
+    padding: 40px 0;
+}
+
+.creative-grid .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* Card - PNGTree style */
+.creative-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.creative-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+/* Thumbnail with overlay */
+.creative-card .thumb {
+    background: linear-gradient(135deg, #f6f7f9 0%, #e8eaeg 100%);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.creative-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.creative-card:hover .thumb img {
+    transform: scale(1.05);
+}
+
+/* Overlay on hover */
+.thumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.creative-card:hover .thumb-overlay {
+    opacity: 1;
+}
+
+.thumb-overlay .download-btn {
+    background: var(--primary);
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.thumb-overlay .download-btn:hover {
+    background: #d4400f;
+    transform: scale(1.05);
+}
+
+/* Download count badge */
+.download-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Card body */
+.card-body {
+    padding: 16px 14px;
+    text-align: left;
+}
+
+.card-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.card-tag {
+    background: #f0f0f0;
+    color: #666;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.card-body h3 {
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.card-body p {
+    font-size: 12px;
+    color: #999;
+    margin: 0 0 10px;
+}
+
+/* Title+Author */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.card-author {
+    color: var(--muted);
+}
+
+/* Button */
+.download-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #d4400f;
+}
+
+/* Dark Mode Support */
+.dark-mode .creations-hero {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.dark-mode .creations-hero h1 {
+    color: #e0e0e0;
+}
+
+.dark-mode .creations-hero p {
+    color: #bbb;
+}
+
+.dark-mode .creative-card {
+    background: #1f1f1f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark-mode .creative-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+.dark-mode .creative-card .thumb {
+    background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+}
+
+.dark-mode .card-body {
+    color: #e0e0e0;
+}
+
+.dark-mode .card-body h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .card-author {
+    color: #999 !important;
+}
+
+.dark-mode .card-category {
+    color: #bbb;
+}
+
+.dark-mode .card-tag {
+    background: #333;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .creative-grid .grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .creative-card .thumb {
+        height: 160px;
+    }
+
+    .card-body {
+        padding: 12px 12px;
+    }
+
+    .card-body h3 {
+        font-size: 14px;
+    }
+
+    .download-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .creative-grid .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .creations-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .creations-hero p {
+        font-size: 0.9rem;
+    }
+}
