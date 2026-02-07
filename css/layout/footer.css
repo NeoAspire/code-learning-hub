@@ -6,3 +6,14 @@
      text-align: center;
      padding: 1em;
  }
+
+ /* Footer Links */
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+    

@@ -5,12 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load download counts from localStorage
   const downloadCounts = JSON.parse(localStorage.getItem('creationDownloads') || '{}');
 
-  // Helper function to increment download count
-  const incrementDownload = (itemId, countBadge) => {
+  // Helper function to increment download count (store only per-browser delta)
+  const incrementDownload = (itemId, baseCount, countBadge) => {
     downloadCounts[itemId] = (downloadCounts[itemId] || 0) + 1;
     localStorage.setItem('creationDownloads', JSON.stringify(downloadCounts));
     if (countBadge) {
-      countBadge.innerHTML = `📥 ${downloadCounts[itemId]}`;
+      const total = (baseCount || 0) + (downloadCounts[itemId] || 0);
+      countBadge.innerHTML = `📥 ${total}`;
     }
   };
 
@@ -47,10 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = item.thumb || '/images/favicon/favicon.png';
       thumbContainer.appendChild(img);
 
-      // Download count badge
+      // Download count badge: combine server baseline with per-browser delta
       const countBadge = document.createElement('div');
       countBadge.className = 'download-count';
-      const displayCount = downloadCounts[item.id] || item.downloads || 0;
+      const baseCount = item.downloads || 0;
+      const storedDelta = downloadCounts[item.id] || 0;
+      const displayCount = (baseCount || 0) + (storedDelta || 0);
       countBadge.innerHTML = `📥 ${displayCount}`;
       thumbContainer.appendChild(countBadge);
 
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.href = item.files[0].url;
         btn.textContent = '⬇ Download';
         btn.setAttribute('download', '');
-        btn.addEventListener('click', () => incrementDownload(item.id, countBadge));
+        btn.addEventListener('click', () => incrementDownload(item.id, baseCount, countBadge));
         overlay.appendChild(btn);
       }
 
@@ -125,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
           a.setAttribute('download', '');
           a.style.fontSize = '12px';
           a.style.padding = '6px 12px';
-          a.addEventListener('click', () => incrementDownload(item.id, countBadge));
+          a.addEventListener('click', () => incrementDownload(item.id, baseCount, countBadge));
           actions.appendChild(a);
         });
         body.appendChild(actions);

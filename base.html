@@ -48,7 +48,10 @@
 
     <!-- Footer -->
     <footer id="site-footer">
-        <p>© <span id="fiscal-year"></span> NeoAspire. All rights reserved.</p>
+        <p>© <span id="fiscal-year"></span> Neoaspire. All rights reserved. |
+            <a href="/legal/terms-and-conditions.html">Terms & Conditions</a> |
+            <a href="/legal/privacy-policy.html">Privacy Policy</a>
+        </p>
     </footer>
 
     <!-- Script to load hamburger -->
@@ -71,13 +74,13 @@
 
     <!-- Script to handle dynamic fiscal year display -->
     <script>
-        const startYear = 2023; // Year your project/company started
+        const startYear = 2025; // Year your project/company started
         const currentYear = new Date().getFullYear();
 
         // Show only last two digits of current year if different from start year
         const displayYear = (currentYear === startYear)
             ? startYear
-            : `${startYear} - ${currentYear.toString().slice(-2)}`;
+            : `${startYear} - ${currentYear.toString().slice(-0)}`;
 
         document.getElementById("fiscal-year").textContent = displayYear;
     </script>
